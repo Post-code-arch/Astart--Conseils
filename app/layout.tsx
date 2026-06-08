@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit, Spectral } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   title: "Astarté Conseils — Le terrain comme doctrine",
   description:
     "Cabinet de conseil & d'études — Maghreb · Sahel. Analyser, accompagner, développer.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#2A1418",
 };
 
 export default function RootLayout({

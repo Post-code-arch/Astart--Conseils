@@ -2085,15 +2085,17 @@ body.menu-open { overflow: hidden; }
   .footer { padding: 60px 20px 30px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 
-  .hero { padding: 110px 20px 60px; }
-  .hero-annotation.a1 { left: -5%; right: auto; }
-  .hero-annotation.a2 { right: -5%; }
+  .hero { padding: 110px 20px 60px; gap: 28px; }
+  .hero-title { font-size: clamp(40px, 11vw, 66px); }
+  .hero-bottom { grid-template-columns: 1fr; gap: 28px; }
+  .hero-annotation { display: none; }
   .method { padding: 80px 20px; }
   .method-head { grid-template-columns: 1fr; gap: 24px; }
-  .method-stage { grid-template-columns: 1fr; gap: 40px; }
-  .method-panel { min-height: 460px; }
-  .panel-content { position: relative; opacity: 1; transform: none; pointer-events: auto; display: none; }
+  .method-stage { grid-template-columns: 1fr; gap: 32px; min-height: 0; align-items: start; }
+  .method-panel { min-height: 0; padding: 0; }
+  .panel-content { position: relative; opacity: 1; transform: none; pointer-events: auto; display: none; padding: 0; }
   .panel-content.active { display: flex; }
+  .diagram-wrap { max-width: 420px; }
   .proof { padding: 70px 20px; }
   .proof-stats { grid-template-columns: 1fr 1fr; gap: 24px; }
   .proof-stat .num { font-size: 78px; }
@@ -2101,4 +2103,55 @@ body.menu-open { overflow: hidden; }
   .diff-list { grid-template-columns: 1fr; gap: 0; }
   .cta { padding: 80px 20px; }
   .marquee-track span { font-size: 32px; }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 600px) {
+  .nav-shell { padding: 14px 16px; }
+  .section { padding: 56px 16px; }
+  .contact-strip { padding: 56px 16px; }
+  .page-hero { padding: 100px 16px 48px; min-height: 0; }
+  .hero { padding: 100px 16px 48px; }
+
+  .page-hero-title { font-size: clamp(34px, 12vw, 52px); }
+  .hero-title { font-size: clamp(34px, 12vw, 56px); }
+  .cta-title { font-size: clamp(32px, 11vw, 48px); }
+  .method-title { font-size: clamp(30px, 10vw, 46px); }
+  .section-head h2 { font-size: clamp(30px, 9vw, 46px); }
+
+  /* big numeric displays */
+  .proof-stats { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .proof-stat .num { font-size: 60px; }
+  .stats-strip { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .stat-block .num { font-size: 68px; }
+  .page-hero-pillar-num { font-size: clamp(96px, 34vw, 150px); }
+
+  .clients-grid-page { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .marquee-track span { font-size: 26px; }
+  .manifesto-body { font-size: 16px; text-align: left; }
+  .pull { font-size: 22px; }
+
+  /* tap targets: full-width pill buttons on the smallest screens */
+  .btn-pill { width: 100%; justify-content: center; }
+  .resource-actions .btn-pill { width: auto; }
+}
+
+/* ---- Respect reduced-motion preference ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .hero-title, .hero-lead, .method-title, .method-lead, .panel-title,
+  .diff-title, .cta-title, .proof-stat, .diff-item, .client-pill,
+  .page-hero-title, .page-hero-lead {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
