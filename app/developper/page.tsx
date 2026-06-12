@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import PillarHero from "@/components/PillarHero";
 
 export const metadata: Metadata = {
   title: "Développer — Astarté Conseils",
@@ -8,35 +9,21 @@ export const metadata: Metadata = {
 export default function DevelopperPage() {
   return (
     <>
-      <section className="page-hero gradient-horizon">
-        <div className="page-hero-grain" aria-hidden="true"></div>
-        <div className="page-hero-inner">
-          <div className="page-hero-text">
-            <p className="eyebrow reveal"><span className="dot"></span> Pilier 03 · Formations · Renforcement de capacités · Programmes</p>
-            <h1 className="page-hero-title reveal d1">
-              Transmettre<br />
-              <em>ce que nous savons faire.</em>
-            </h1>
-            <div className="page-hero-bottom">
-              <p className="page-hero-lead reveal d2">
-                Nos formations ne sont pas des modules importés. Elles sont conçues à partir de vos dossiers,
-                vos données, vos terrains — et elles laissent à l&apos;organisation des outils qu&apos;elle peut redéployer
-                en interne, sans nous.
-              </p>
-              <Link href="/#contact" className="btn-pill primary reveal d3">
-                Construire un programme
-                <span className="arrow">→</span>
-              </Link>
-            </div>
-          </div>
-          <div className="page-hero-pillar-num reveal d2">
-            03
-            <span style={{ fontFamily: "var(--font-sans)", fontStyle: "normal", fontSize: "0.1em", fontWeight: 500, letterSpacing: "0.2em", color: "rgba(248,246,234,0.5)", textTransform: "uppercase", display: "block", marginTop: "-0.4em" }}>
-              / Pilier
-            </span>
-          </div>
-        </div>
-      </section>
+      <PillarHero
+        tone="developper"
+        index="03"
+        name="Développer"
+        eyebrow="Pilier 03 · Formations · Renforcement de capacités · Programmes"
+        title={
+          <>
+            Transmettre<br />
+            <em>ce que nous savons faire.</em>
+          </>
+        }
+        lead="Nos formations ne sont pas des modules importés. Elles sont conçues à partir de vos dossiers, vos données, vos terrains — et elles laissent à l'organisation des outils qu'elle peut redéployer en interne, sans nous."
+        ctaLabel="Construire un programme"
+        ctaHref="/#contact"
+      />
 
       <section className="section tone-cream">
         <div className="section-head">

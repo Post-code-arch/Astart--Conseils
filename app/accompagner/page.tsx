@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import PillarHero from "@/components/PillarHero";
 
 export const metadata: Metadata = {
   title: "Accompagner — Astarté Conseils",
@@ -8,35 +9,21 @@ export const metadata: Metadata = {
 export default function AccompagnerPage() {
   return (
     <>
-      <section className="page-hero gradient-sunset">
-        <div className="page-hero-grain" aria-hidden="true"></div>
-        <div className="page-hero-inner">
-          <div className="page-hero-text">
-            <p className="eyebrow reveal"><span className="dot"></span> Pilier 02 · Suivi-Évaluation · Stratégies · Pilotage</p>
-            <h1 className="page-hero-title reveal d1">
-              Mesurer ce qui compte,<br />
-              <em>ajuster ce qui doit l&apos;être.</em>
-            </h1>
-            <div className="page-hero-bottom">
-              <p className="page-hero-lead reveal d2">
-                L&apos;évaluation, la stratégie et l&apos;accompagnement opérationnel doivent produire des décisions —
-                pas seulement des rapports. Nous travaillons aux côtés des équipes de pilotage pour transformer
-                l&apos;analyse en arbitrages concrets, sans dépossession.
-              </p>
-              <Link href="/#contact" className="btn-pill primary reveal d3">
-                Discuter d&apos;une mission
-                <span className="arrow">→</span>
-              </Link>
-            </div>
-          </div>
-          <div className="page-hero-pillar-num reveal d2">
-            02
-            <span style={{ fontFamily: "var(--font-sans)", fontStyle: "normal", fontSize: "0.1em", fontWeight: 500, letterSpacing: "0.2em", color: "rgba(248,246,234,0.5)", textTransform: "uppercase", display: "block", marginTop: "-0.4em" }}>
-              / Pilier
-            </span>
-          </div>
-        </div>
-      </section>
+      <PillarHero
+        tone="accompagner"
+        index="02"
+        name="Accompagner"
+        eyebrow="Pilier 02 · Suivi-Évaluation · Stratégies · Pilotage"
+        title={
+          <>
+            Mesurer ce qui compte,<br />
+            <em>ajuster ce qui doit l&apos;être.</em>
+          </>
+        }
+        lead="L'évaluation, la stratégie et l'accompagnement opérationnel doivent produire des décisions — pas seulement des rapports. Nous travaillons aux côtés des équipes de pilotage pour transformer l'analyse en arbitrages concrets, sans dépossession."
+        ctaLabel="Discuter d'une mission"
+        ctaHref="/#contact"
+      />
 
       <section className="section tone-cream">
         <div className="section-head">

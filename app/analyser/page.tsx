@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import PillarHero from "@/components/PillarHero";
 
 export const metadata: Metadata = {
   title: "Analyser — Astarté Conseils",
@@ -8,38 +9,21 @@ export const metadata: Metadata = {
 export default function AnalyserPage() {
   return (
     <>
-      <section className="page-hero gradient-misty">
-        <div className="page-hero-grain" aria-hidden="true"></div>
-
-        <div className="page-hero-inner">
-          <div className="page-hero-text">
-            <p className="eyebrow reveal"><span className="dot"></span> Pilier 01 · Études · Recherches · Diagnostics</p>
-            <h1 className="page-hero-title reveal d1">
-              Comprendre<br />
-              <em>avant d&apos;agir.</em>
-            </h1>
-
-            <div className="page-hero-bottom">
-              <p className="page-hero-lead reveal d2">
-                Les décisions stratégiques s&apos;appuient sur des données fiables. Nous produisons
-                les études, les diagnostics et les analyses qui éclairent vos choix sur les terrains
-                nord-africains — où la nuance contextuelle reste, selon nous, la première forme d&apos;expertise.
-              </p>
-              <Link href="/#contact" className="btn-pill primary reveal d3">
-                Discuter d&apos;une mission
-                <span className="arrow">→</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="page-hero-pillar-num reveal d2">
-            01
-            <span style={{ fontFamily: "var(--font-sans)", fontStyle: "normal", fontSize: "0.1em", fontWeight: 500, letterSpacing: "0.2em", color: "rgba(248,246,234,0.5)", textTransform: "uppercase", display: "block", marginTop: "-0.4em" }}>
-              / Pilier
-            </span>
-          </div>
-        </div>
-      </section>
+      <PillarHero
+        tone="analyser"
+        index="01"
+        name="Analyser"
+        eyebrow="Pilier 01 · Études · Recherches · Diagnostics"
+        title={
+          <>
+            Comprendre<br />
+            <em>avant d&apos;agir.</em>
+          </>
+        }
+        lead="Les décisions stratégiques s'appuient sur des données fiables. Nous produisons les études, les diagnostics et les analyses qui éclairent vos choix sur les terrains nord-africains — où la nuance contextuelle reste, selon nous, la première forme d'expertise."
+        ctaLabel="Discuter d'une mission"
+        ctaHref="/#contact"
+      />
 
       <section className="section tone-cream">
         <div className="section-head">
