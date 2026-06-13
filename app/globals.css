@@ -404,35 +404,35 @@ body.menu-open { overflow: hidden; }
 .pillar-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 88vh;
+  min-height: 100vh;
   background: var(--cream);
 }
 .pillar-hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 26px;
-  padding: 160px 64px 80px;
+  gap: 36px;
+  padding: 150px 76px 100px;
 }
 .pillar-hero-text .eyebrow .dot { background: var(--orange); }
 .pillar-hero-title {
   font-family: var(--font-serif);
   font-weight: 300;
   font-size: clamp(48px, 5vw, 88px);
-  line-height: 0.98;
-  letter-spacing: -0.028em;
+  line-height: 1.06;
+  letter-spacing: -0.026em;
   color: var(--aubergine);
 }
 .pillar-hero-title em { font-style: italic; color: var(--rust); }
 .pillar-hero-lead {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 19px;
+  line-height: 1.85;
   color: var(--aub-muted);
-  max-width: 520px;
+  max-width: 500px;
 }
-.pillar-hero-text .btn-pill { width: fit-content; margin-top: 6px; }
+.pillar-hero-text .btn-pill { width: fit-content; margin-top: 14px; }
 
 .pillar-hero-panel {
   position: relative;
