@@ -407,68 +407,41 @@ body.menu-open { overflow: hidden; }
   min-height: 100vh;
   background: var(--cream);
 }
-.pillar-hero-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 36px;
-  padding: 150px 76px 100px;
-}
-.pillar-hero-text .eyebrow .dot { background: var(--orange); }
-.pillar-hero-title {
-  font-family: var(--font-serif);
-  font-weight: 300;
-  font-size: clamp(48px, 5vw, 88px);
-  line-height: 1.06;
-  letter-spacing: -0.026em;
-  color: var(--aubergine);
-}
-.pillar-hero-title em { font-style: italic; color: var(--rust); }
-.pillar-hero-lead {
-  font-family: var(--font-sans);
-  font-weight: 300;
-  font-size: 19px;
-  line-height: 1.85;
-  color: var(--aub-muted);
-  max-width: 500px;
-}
-.pillar-hero-text .btn-pill { width: fit-content; margin-top: 14px; }
 
+/* LEFT — vivid colored panel holding the square visual + brand mark */
 .pillar-hero-panel {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 56px 64px;
+  padding: 120px 64px;
   overflow: hidden;
 }
-.pillar-hero.tone-analyser .pillar-hero-panel {
-  background: linear-gradient(155deg, #F1E4C0 0%, #E6D199 100%);
-}
-.pillar-hero.tone-accompagner .pillar-hero-panel {
-  background: linear-gradient(155deg, #F7D9AE 0%, #EDA866 100%);
-}
-.pillar-hero.tone-developper .pillar-hero-panel {
-  background: linear-gradient(155deg, #ECCFAA 0%, #D89C70 100%);
-}
-.pillar-hero-star {
+.pillar-hero.tone-analyser .pillar-hero-panel { background: #E0863C; }
+.pillar-hero.tone-accompagner .pillar-hero-panel { background: #BE5A38; }
+.pillar-hero.tone-developper .pillar-hero-panel { background: #9E6B2C; }
+
+.pillar-hero-mark {
   position: absolute;
-  top: 44px;
-  right: 44px;
-  width: 88px;
-  height: 88px;
+  top: 8%;
+  right: 8%;
+  width: 80px;
+  height: 80px;
   color: var(--aubergine);
+  z-index: 2;
 }
-.pillar-hero-star svg { width: 100%; height: 100%; display: block; }
+.pillar-hero-mark svg,
+.pillar-hero-mark img { width: 100%; height: 100%; display: block; object-fit: contain; }
 
 .pillar-hero-media {
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 470px;
   aspect-ratio: 1;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 24px 70px rgba(42, 20, 24, 0.22);
+  background: var(--cream);
+  box-shadow: 0 34px 90px rgba(42, 20, 24, 0.32);
 }
 .pillar-hero-media img { object-fit: cover; }
 .pillar-hero-ph {
@@ -479,15 +452,15 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
   gap: 16px;
-  background: rgba(248, 246, 234, 0.42);
-  border: 1.5px dashed rgba(42, 20, 24, 0.3);
+  background: rgba(248, 246, 234, 0.6);
+  border: 1.5px dashed rgba(42, 20, 24, 0.25);
   border-radius: 4px;
 }
 .pillar-hero-ph-star {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   color: var(--aubergine);
-  opacity: 0.65;
+  opacity: 0.55;
 }
 .pillar-hero-ph-star svg { width: 100%; height: 100%; display: block; }
 .pillar-hero-ph span {
@@ -498,17 +471,33 @@ body.menu-open { overflow: hidden; }
   text-transform: uppercase;
   color: var(--aub-muted);
 }
-.pillar-hero-index {
-  position: absolute;
-  left: 56px;
-  bottom: 56px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(42, 20, 24, 0.6);
+
+/* RIGHT — text on cream, spare & airy */
+.pillar-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+  padding: 120px 84px;
 }
+.pillar-hero-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(46px, 4.6vw, 80px);
+  line-height: 1.08;
+  letter-spacing: -0.026em;
+  color: var(--aubergine);
+}
+.pillar-hero-title em { font-style: italic; color: var(--orange); }
+.pillar-hero-lead {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--aub-muted);
+  max-width: 460px;
+}
+.pillar-hero-text .btn-pill { width: fit-content; }
 
 /* ============================================================
    PAGE HERO (inner pages)
@@ -2304,11 +2293,10 @@ body.menu-open { overflow: hidden; }
   .menu-top { margin-bottom: 40px; }
 
   .pillar-hero { grid-template-columns: 1fr; min-height: 0; }
-  .pillar-hero-text { padding: 108px 20px 48px; gap: 22px; }
-  .pillar-hero-panel { padding: 36px 20px 56px; min-height: 72vw; }
-  .pillar-hero-star { width: 58px; height: 58px; top: 22px; right: 20px; }
-  .pillar-hero-media { max-width: 400px; }
-  .pillar-hero-index { left: 20px; bottom: 22px; }
+  .pillar-hero-text { order: 1; padding: 104px 20px 40px; gap: 26px; }
+  .pillar-hero-panel { order: 2; padding: 16px 20px 56px; min-height: 84vw; }
+  .pillar-hero-mark { width: 52px; height: 52px; top: 16px; right: 18px; }
+  .pillar-hero-media { max-width: 380px; }
 
   .page-hero { padding: 110px 20px 60px; min-height: 70vh; }
   .page-hero-inner { grid-template-columns: 1fr; gap: 30px; }
@@ -2351,9 +2339,8 @@ body.menu-open { overflow: hidden; }
   .hero { padding: 100px 16px 48px; }
 
   .pillar-hero-title { font-size: clamp(36px, 11vw, 56px); }
-  .pillar-hero-text { padding: 100px 16px 44px; }
-  .pillar-hero-panel { padding: 32px 16px 52px; }
-  .pillar-hero-index { left: 16px; }
+  .pillar-hero-text { padding: 96px 16px 36px; gap: 24px; }
+  .pillar-hero-panel { padding: 12px 16px 48px; }
   .page-hero-title { font-size: clamp(34px, 12vw, 52px); }
   .hero-title { font-size: clamp(34px, 12vw, 56px); }
   .cta-title { font-size: clamp(32px, 11vw, 48px); }

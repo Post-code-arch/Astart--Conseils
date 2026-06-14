@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 
 type Tone = "analyser" | "accompagner" | "developper";
 
+// Brand-mark placeholder. Swap <StarMark /> for <Image src="/assets/logo-mark.png" .../>
+// once the real logo asset is provided.
 function StarMark() {
   return (
     <svg viewBox="0 0 100 100" aria-hidden="true">
@@ -18,49 +20,30 @@ function StarMark() {
   );
 }
 
-export default function PillarHero({
-  tone,
-  index,
-  name,
-  eyebrow,
-  title,
-  lead,
-  ctaLabel,
-  ctaHref,
-  imageSrc,
-  imageAlt,
-}: {
+export default function PillarHero(props: {
   tone: Tone;
-  index: string;
-  name: string;
-  eyebrow: string;
   title: ReactNode;
   lead: string;
   ctaLabel: string;
   ctaHref: string;
-  /** Optional — drop in the real visual later; a placeholder shows until then. */
+  /** Optional — drop in the real square visual later; a placeholder shows until then. */
   imageSrc?: string;
   imageAlt?: string;
+  // Accepted for call-site compatibility; not rendered in this spare layout.
+  eyebrow?: string;
+  index?: string;
+  name?: string;
 }) {
+  const { tone, title, lead, ctaLabel, ctaHref, imageSrc, imageAlt } = props;
+
   return (
     <section className={`pillar-hero tone-${tone}`}>
-      <div className="pillar-hero-text on-light">
-        <p className="eyebrow reveal">
-          <span className="dot"></span> {eyebrow}
-        </p>
-        <h1 className="pillar-hero-title reveal d1">{title}</h1>
-        <p className="pillar-hero-lead reveal d2">{lead}</p>
-        <Link href={ctaHref} className="btn-pill outline-dark reveal d3">
-          {ctaLabel} <span className="arrow">→</span>
-        </Link>
-      </div>
-
       <div className="pillar-hero-panel">
-        <span className="pillar-hero-star">
+        <span className="pillar-hero-mark" aria-hidden="true">
           <StarMark />
         </span>
 
-        <div className="pillar-hero-media reveal d2">
+        <div className="pillar-hero-media reveal">
           {imageSrc ? (
             <Image src={imageSrc} alt={imageAlt ?? ""} fill sizes="(max-width: 980px) 90vw, 45vw" />
           ) : (
@@ -72,10 +55,14 @@ export default function PillarHero({
             </div>
           )}
         </div>
+      </div>
 
-        <span className="pillar-hero-index">
-          {index} — {name}
-        </span>
+      <div className="pillar-hero-text">
+        <h1 className="pillar-hero-title reveal">{title}</h1>
+        <p className="pillar-hero-lead reveal d1">{lead}</p>
+        <Link href={ctaHref} className="btn-pill outline-dark reveal d2">
+          {ctaLabel} <span className="arrow">→</span>
+        </Link>
       </div>
     </section>
   );
