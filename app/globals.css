@@ -2216,19 +2216,18 @@ body.menu-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 20px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.45s ease 0.1s, transform 0.45s ease 0.1s;
 }
-.expertise-panel:hover .ep-body { opacity: 1; transform: none; }
 .ep-accroche {
   font-family: var(--font-sans);
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
-  color: var(--cream);
+  color: var(--aub-muted); /* discreet preview on cream at rest */
+  opacity: 0.72;
   max-width: 380px;
+  transition: color 0.45s ease, opacity 0.45s ease;
 }
+.expertise-panel:hover .ep-accroche { color: var(--cream); opacity: 1; }
 .ep-cta {
   font-family: var(--font-sans);
   font-size: 12px;
@@ -2240,7 +2239,10 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   gap: 8px;
   text-decoration: none;
+  opacity: 0; /* revealed on hover */
+  transition: opacity 0.45s ease 0.05s;
 }
+.expertise-panel:hover .ep-cta { opacity: 1; }
 .ep-cta .arrow { transition: transform 0.3s; }
 .expertise-panel:hover .ep-cta .arrow { transform: translateX(4px); }
 
@@ -2248,7 +2250,8 @@ body.menu-open { overflow: hidden; }
   .expertise-panel,
   .ep-media,
   .ep-title,
-  .ep-body,
+  .ep-accroche,
+  .ep-cta,
   .ep-cta .arrow { transition: none; }
 }
 
@@ -2345,7 +2348,9 @@ body.menu-open { overflow: hidden; }
   .expertise-panel.is-open .ep-media { opacity: 1; }
   .ep-head { padding: 40px 24px 0; }
   .ep-title { color: var(--cream); }
-  .ep-body { opacity: 1; transform: none; padding: 16px 24px 44px; }
+  .ep-body { padding: 16px 24px 44px; }
+  .ep-accroche { color: var(--cream); opacity: 1; }
+  .ep-cta { opacity: 1; }
   /* first band starts lower so its title clears the fixed nav */
   .expertise-panel:first-of-type .ep-head { padding-top: 112px; }
   .team-grid { grid-template-columns: 1fr; gap: 40px; }
