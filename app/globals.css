@@ -73,27 +73,37 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   justify-content: space-between;
   align-items: center;
   padding: 22px 44px;
-  background: rgba(42, 20, 24, 0.72);
+}
+/* bar background as its own layer so it can fade in independently of the brand */
+.nav-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 20, 24, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-dark);
-  transition: background 0.3s ease, padding 0.3s ease;
+  z-index: 0;
 }
-.nav-shell.scrolled {
-  padding: 14px 44px;
-  background: rgba(42, 20, 24, 0.92);
+/* morphing wordmark — large in the hero, docks into the nav on scroll */
+.brand-morph {
+  position: relative;
+  z-index: 2;
+  transform-origin: left center;
+  will-change: transform;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--saffron);
+  text-decoration: none;
+  white-space: nowrap;
 }
-.nav-logo {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 0;
-}
-.nav-logo img {
-  height: 24px;
-  width: auto;
-  display: block;
-}
+/* while the wordmark is still travelling it must not block hero clicks */
+.nav-morphing .brand-morph { pointer-events: none; }
 .nav-burger {
+  position: relative;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -108,7 +118,7 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .nav-burger:hover {
   background: var(--saffron);
@@ -183,6 +193,13 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   position: relative; z-index: 2;
 }
 .menu-logo-mark { height: 36px; width: auto; }
+.menu-wordmark {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.01em;
+  color: var(--saffron);
+}
 .menu-close {
   background: transparent;
   border: 1px solid rgba(240, 181, 106, 0.4);
@@ -1026,9 +1043,8 @@ body.menu-open { overflow: hidden; }
   gap: 40px;
 }
 .hero-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* hidden on the home hero — the morphing KINAYA wordmark owns the top band */
+  display: none;
 }
 .hero-middle {
   display: flex;
