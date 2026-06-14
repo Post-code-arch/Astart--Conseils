@@ -25,7 +25,7 @@ const panels: {
       "Diagnostics organisationnels & territoriaux",
       "Analyses de contexte & veille stratégique",
     ],
-    href: "/analyser",
+    href: "/expertises/analyser",
   },
   {
     key: "accompagner",
@@ -39,7 +39,7 @@ const panels: {
       "Suivi-évaluation & mesure d'impact",
       "Accompagnement au changement",
     ],
-    href: "/accompagner",
+    href: "/expertises/accompagner",
   },
   {
     key: "developper",
@@ -53,7 +53,7 @@ const panels: {
       "Coaching individuel & collectif",
       "Ingénierie pédagogique & supports",
     ],
-    href: "/developper",
+    href: "/expertises/developper",
   },
 ];
 

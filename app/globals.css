@@ -2104,6 +2104,69 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ============================================================
+   EXPERTISES PARENT — door cards
+============================================================ */
+.expertise-doors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.expertise-door {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 42px 34px;
+  background: rgba(248, 246, 234, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.expertise-door:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(42, 20, 24, 0.18);
+  border-color: var(--orange);
+}
+.expertise-door .door-index {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.expertise-door h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.05;
+  color: var(--aubergine);
+}
+.expertise-door p {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--aub-muted);
+  flex: 1;
+}
+.expertise-door .door-link {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.expertise-door .door-link .arrow { transition: transform 0.3s; }
+.expertise-door:hover .door-link .arrow { transform: translateX(4px); }
+
+/* ============================================================
    REFERENCES PAGE
 ============================================================ */
 .refs-page-grid {
@@ -2175,6 +2238,7 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 980px) {
   .refs-page-grid { grid-template-columns: 1fr; }
   .clients-grid-page { grid-template-columns: 1fr 1fr; }
+  .expertise-doors { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; gap: 40px; }
   .stats-strip { grid-template-columns: 1fr 1fr; }
   .resource-feature { grid-template-columns: 1fr; gap: 30px; }

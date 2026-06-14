@@ -13,19 +13,19 @@ export default function Footer() {
           </p>
         </div>
         <div className="footer-links">
-          <h6>Navigation</h6>
+          <h6>Expertises</h6>
           <ul>
             <li>
-              <Link href="/#methode">Approche</Link>
+              <Link href="/expertises">Toutes les expertises</Link>
             </li>
             <li>
-              <Link href="/analyser">Analyser</Link>
+              <Link href="/expertises/analyser">Analyser</Link>
             </li>
             <li>
-              <Link href="/accompagner">Accompagner</Link>
+              <Link href="/expertises/accompagner">Accompagner</Link>
             </li>
             <li>
-              <Link href="/developper">Développer</Link>
+              <Link href="/expertises/developper">Développer</Link>
             </li>
           </ul>
         </div>
