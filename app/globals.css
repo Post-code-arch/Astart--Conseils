@@ -2121,12 +2121,30 @@ body.menu-open { overflow: hidden; }
   background: rgba(248, 246, 234, 0.7);
   border: 1px solid var(--line);
   border-radius: 14px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  /* transform is owned by Framer Motion; CSS only animates color/shadow */
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
 }
 .expertise-door:hover {
-  transform: translateY(-4px);
   box-shadow: 0 18px 50px rgba(42, 20, 24, 0.18);
   border-color: var(--orange);
+}
+/* gold filet that draws in along the bottom on hover */
+.expertise-door::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 0;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.expertise-door:hover::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .expertise-door::after { transition: none; }
 }
 .expertise-door .door-index {
   font-family: var(--font-sans);

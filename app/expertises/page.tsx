@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { expertises, expertisesParent } from "@/lib/expertises";
+import ExpertiseDoor from "@/components/ExpertiseDoor";
 
 export const metadata: Metadata = {
   title: "Expertises — Astarté Conseils",
@@ -47,18 +47,14 @@ export default function ExpertisesPage() {
 
         <div className="expertise-doors">
           {expertises.map((e, i) => (
-            <Link
+            <ExpertiseDoor
               key={e.slug}
-              href={`/expertises/${e.slug}`}
-              className={`expertise-door reveal d${i + 1}`}
-            >
-              <span className="door-index">Pilier {e.index}</span>
-              <h3>{e.title}</h3>
-              <p>{e.accroche}</p>
-              <span className="door-link">
-                Explorer ce pilier <span className="arrow">→</span>
-              </span>
-            </Link>
+              slug={e.slug}
+              index={e.index}
+              title={e.title}
+              accroche={e.accroche}
+              position={i}
+            />
           ))}
         </div>
       </section>
