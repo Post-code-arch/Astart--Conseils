@@ -2121,30 +2121,29 @@ body.menu-open { overflow: hidden; }
   background: rgba(248, 246, 234, 0.7);
   border: 1px solid var(--line);
   border-radius: 14px;
-  /* transform is owned by Framer Motion; CSS only animates color/shadow */
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  /* lift (transform) owned by Framer Motion; CSS animates bg/color + directional shift */
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   position: relative;
 }
 .expertise-door:hover {
+  background: #EFE7D2; /* crème plus profond */
   box-shadow: 0 18px 50px rgba(42, 20, 24, 0.18);
   border-color: var(--orange);
 }
-/* gold filet that draws in along the bottom on hover */
-.expertise-door::after {
-  content: "";
-  position: absolute;
-  left: 34px;
-  right: 34px;
-  bottom: 0;
-  height: 2px;
-  background: var(--orange);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+/* directional shift: title + link nudge toward the reading direction on hover */
+.expertise-door h3,
+.expertise-door .door-link {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.expertise-door:hover::after { transform: scaleX(1); }
+.expertise-door:hover h3,
+.expertise-door:hover .door-link {
+  transform: translateX(6px);
+}
 @media (prefers-reduced-motion: reduce) {
-  .expertise-door::after { transition: none; }
+  .expertise-door h3,
+  .expertise-door .door-link { transition: none; }
+  .expertise-door:hover h3,
+  .expertise-door:hover .door-link { transform: none; }
 }
 .expertise-door .door-index {
   font-family: var(--font-sans);
@@ -2182,7 +2181,6 @@ body.menu-open { overflow: hidden; }
   margin-top: 6px;
 }
 .expertise-door .door-link .arrow { transition: transform 0.3s; }
-.expertise-door:hover .door-link .arrow { transform: translateX(4px); }
 
 /* ============================================================
    REFERENCES PAGE
