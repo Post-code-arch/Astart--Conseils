@@ -1786,9 +1786,9 @@ body.menu-open { overflow: hidden; }
 ============================================================ */
 .cta {
   background:
-    radial-gradient(120% 120% at 50% 120%, rgba(232, 133, 58, 0.5) 0%, rgba(232, 133, 58, 0) 58%),
-    var(--aubergine);
-  color: var(--cream);
+    radial-gradient(130% 120% at 50% 0%, rgba(240, 181, 106, 0.95) 0%, rgba(240, 181, 106, 0) 55%),
+    linear-gradient(158deg, #EE9C50 0%, var(--orange) 46%, #C2552B 100%);
+  color: var(--aubergine);
   padding: 140px 44px;
   text-align: center;
   position: relative;
@@ -1809,13 +1809,13 @@ body.menu-open { overflow: hidden; }
 .cta::before {
   width: 65vw; height: 65vw; max-width: 820px; max-height: 820px;
   left: -12%; bottom: -28%;
-  background: radial-gradient(circle, rgba(232, 133, 58, 0.85) 0%, rgba(232, 133, 58, 0) 70%);
+  background: radial-gradient(circle, rgba(61, 18, 32, 0.6) 0%, rgba(61, 18, 32, 0) 70%);
   animation: ctaDriftA 26s ease-in-out infinite alternate;
 }
 .cta::after {
   width: 52vw; height: 52vw; max-width: 700px; max-height: 700px;
   right: -10%; top: -26%;
-  background: radial-gradient(circle, rgba(184, 83, 58, 0.8) 0%, rgba(184, 83, 58, 0) 70%);
+  background: radial-gradient(circle, rgba(42, 20, 24, 0.6) 0%, rgba(42, 20, 24, 0) 70%);
   animation: ctaDriftB 32s ease-in-out infinite alternate;
 }
 @keyframes ctaDriftA {
@@ -1840,25 +1840,26 @@ body.menu-open { overflow: hidden; }
   position: relative;
   z-index: 1;
 }
-.cta .eyebrow { color: var(--saffron); }
+.cta .eyebrow { color: var(--aubergine); }
+.cta .eyebrow .dot { background: var(--aubergine); }
 .cta-title {
   font-family: var(--font-serif);
   font-weight: 300;
   font-size: clamp(48px, 5.6vw, 80px);
   line-height: 1.0;
   letter-spacing: -0.025em;
-  color: var(--cream);
+  color: var(--aubergine);
 }
 .cta-title em {
   font-style: italic;
-  color: var(--saffron);
+  color: var(--plum);
 }
 .cta-lead {
   font-family: var(--font-sans);
   font-weight: 300;
   font-size: 17px;
   line-height: 1.6;
-  color: var(--cream-muted);
+  color: rgba(42, 20, 24, 0.72);
   max-width: 580px;
 }
 .cta-actions {
@@ -1882,22 +1883,22 @@ body.menu-open { overflow: hidden; }
   transition: all 0.3s;
 }
 .cta-btn.primary {
-  background: var(--cream);
-  color: var(--aubergine);
+  background: var(--aubergine);
+  color: var(--cream);
 }
 .cta-btn.primary:hover {
-  background: var(--saffron);
+  background: var(--plum);
   transform: translateY(-3px);
 }
 .cta-btn.primary span { transition: transform 0.3s; }
 .cta-btn.primary:hover span { transform: translateX(4px); }
 .cta-btn.ghost {
-  border: 1px solid var(--cream-muted);
-  color: var(--cream);
+  border: 1px solid rgba(42, 20, 24, 0.45);
+  color: var(--aubergine);
 }
 .cta-btn.ghost:hover {
-  border-color: var(--saffron);
-  color: var(--saffron);
+  border-color: var(--aubergine);
+  background: rgba(42, 20, 24, 0.06);
 }
 
 /* ============================================================
