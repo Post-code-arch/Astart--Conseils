@@ -2133,81 +2133,82 @@ body.menu-open { overflow: hidden; }
 /* ============================================================
    EXPERTISES PARENT — door cards
 ============================================================ */
-.expertise-doors {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* Expanding panels — hover to "develop the idea" (reveal description + colour) */
+.expertise-panels {
+  display: flex;
   max-width: 1440px;
   margin: 0 auto;
+  min-height: 540px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
 }
-.expertise-door {
+.expertise-panel {
+  flex: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 42px 34px;
-  background: rgba(248, 246, 234, 0.7);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  /* lift (transform) owned by Framer Motion; CSS animates bg/color + directional shift */
-  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-  position: relative;
+  gap: 18px;
+  padding: 48px 40px;
+  background: var(--cream);
+  border-left: 1px solid var(--line);
+  overflow: hidden;
+  text-decoration: none;
+  transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.6s ease;
 }
-.expertise-door:hover {
-  background: #EFE7D2; /* crème plus profond */
-  box-shadow: 0 18px 50px rgba(42, 20, 24, 0.18);
-  border-color: var(--orange);
-}
-/* directional shift: title + link nudge toward the reading direction on hover */
-.expertise-door h3,
-.expertise-door .door-link {
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.expertise-door:hover h3,
-.expertise-door:hover .door-link {
-  transform: translateX(6px);
-}
-@media (prefers-reduced-motion: reduce) {
-  .expertise-door h3,
-  .expertise-door .door-link { transition: none; }
-  .expertise-door:hover h3,
-  .expertise-door:hover .door-link { transform: none; }
-}
-.expertise-door .door-index {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--orange);
-}
-.expertise-door h3 {
+.expertise-panel:first-child { border-left: none; }
+.expertise-panel:hover { flex: 2.6; }
+.expertise-panel.tone-analyser:hover { background: #E0863C; }
+.expertise-panel.tone-accompagner:hover { background: #BE5A38; }
+.expertise-panel.tone-developper:hover { background: #9E6B2C; }
+
+.ep-title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 30px;
-  line-height: 1.05;
+  font-size: clamp(28px, 2.6vw, 42px);
+  line-height: 1.04;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
   color: var(--aubergine);
+  transition: color 0.4s ease;
 }
-.expertise-door p {
+.expertise-panel:hover .ep-title { color: var(--cream); }
+.ep-accroche {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--aub-muted);
-  flex: 1;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--cream);
+  max-width: 380px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s ease 0.1s, transform 0.45s ease 0.1s;
 }
-.expertise-door .door-link {
+.expertise-panel:hover .ep-accroche { opacity: 1; transform: none; }
+.ep-cta {
+  margin-top: auto;
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--rust);
+  color: var(--cream);
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 6px;
+  opacity: 0;
+  transition: opacity 0.45s ease 0.18s;
 }
-.expertise-door .door-link .arrow { transition: transform 0.3s; }
+.expertise-panel:hover .ep-cta { opacity: 1; }
+.ep-cta .arrow { transition: transform 0.3s; }
+.expertise-panel:hover .ep-cta .arrow { transform: translateX(4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .expertise-panel,
+  .ep-title,
+  .ep-accroche,
+  .ep-cta { transition: none; }
+}
 
 /* ============================================================
    REFERENCES PAGE
@@ -2281,7 +2282,14 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 980px) {
   .refs-page-grid { grid-template-columns: 1fr; }
   .clients-grid-page { grid-template-columns: 1fr 1fr; }
-  .expertise-doors { grid-template-columns: 1fr; }
+  .expertise-panels { flex-direction: column; min-height: 0; }
+  .expertise-panel { flex: 1 !important; border-left: none; border-top: 1px solid var(--line); padding: 32px 22px; }
+  .expertise-panel:first-child { border-top: none; }
+  .expertise-panel:hover { background: var(--cream); }
+  .expertise-panel:hover .ep-title { color: var(--aubergine); }
+  /* no hover on touch: always show the developed idea, in dark ink on cream */
+  .ep-accroche { opacity: 1; transform: none; color: var(--aub-muted); max-width: none; }
+  .ep-cta { opacity: 1; color: var(--rust); margin-top: 4px; }
   .team-grid { grid-template-columns: 1fr; gap: 40px; }
   .stats-strip { grid-template-columns: 1fr 1fr; }
   .resource-feature { grid-template-columns: 1fr; gap: 30px; }
