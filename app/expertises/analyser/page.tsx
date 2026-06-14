@@ -23,6 +23,8 @@ export default function AnalyserPage() {
         lead="Les décisions stratégiques s'appuient sur des données fiables. Nous produisons les études, les diagnostics et les analyses qui éclairent vos choix sur les terrains nord-africains — où la nuance contextuelle reste, selon nous, la première forme d'expertise."
         ctaLabel="Discuter d'une mission"
         ctaHref="/#contact"
+        imageSrc="/assets/expertise-analyser.jpg"
+        imageAlt="Recherche documentaire, cartes et instruments — pilier Analyser"
       />
 
       <section className="section tone-cream">

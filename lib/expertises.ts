@@ -9,6 +9,9 @@ export type Expertise = {
   title: string;
   /** Short hook shown on the parent page card. */
   accroche: string;
+  /** Pillar visual — drop the file at this path in /public to make it appear. */
+  image: string;
+  imageAlt: string;
 };
 
 export const expertisesParent = {
@@ -26,6 +29,8 @@ export const expertises: Expertise[] = [
     title: "Analyser",
     accroche:
       "Comprendre avant d'agir : études, diagnostics et analyses qui éclairent vos décisions sur les terrains nord-africains.",
+    image: "/assets/expertise-analyser.jpg",
+    imageAlt: "Recherche documentaire, cartes et instruments — pilier Analyser",
   },
   {
     slug: "accompagner",
@@ -33,6 +38,8 @@ export const expertises: Expertise[] = [
     title: "Accompagner",
     accroche:
       "Mesurer ce qui compte : évaluations, stratégies et pilotage qui produisent des décisions — pas seulement des rapports.",
+    image: "/assets/expertise-accompagner.jpg",
+    imageAlt: "Deux praticiennes franchissant un pont au crépuscule — pilier Accompagner",
   },
   {
     slug: "developper",
@@ -40,5 +47,7 @@ export const expertises: Expertise[] = [
     title: "Développer",
     accroche:
       "Transmettre ce que nous savons faire : formations et renforcement de capacités ancrés dans vos dossiers réels.",
+    image: "/assets/expertise-developper.jpg",
+    imageAlt: "Amphithéâtre en spirale et atome — pilier Développer",
   },
 ];
