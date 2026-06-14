@@ -1786,14 +1786,49 @@ body.menu-open { overflow: hidden; }
 ============================================================ */
 .cta {
   background:
-    radial-gradient(circle at 50% 100%, rgba(232, 133, 58, 0.7) 0%, rgba(232, 133, 58, 0) 60%),
-    radial-gradient(circle at 30% 80%, rgba(240, 181, 106, 0.6) 0%, rgba(240, 181, 106, 0) 50%),
+    radial-gradient(120% 120% at 50% 120%, rgba(232, 133, 58, 0.5) 0%, rgba(232, 133, 58, 0) 58%),
     var(--aubergine);
   color: var(--cream);
   padding: 140px 44px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+/* living warm gradient — soft brand-tone blobs drifting slowly behind the content */
+.cta::before,
+.cta::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+.cta::before {
+  width: 65vw; height: 65vw; max-width: 820px; max-height: 820px;
+  left: -12%; bottom: -28%;
+  background: radial-gradient(circle, rgba(232, 133, 58, 0.85) 0%, rgba(232, 133, 58, 0) 70%);
+  animation: ctaDriftA 26s ease-in-out infinite alternate;
+}
+.cta::after {
+  width: 52vw; height: 52vw; max-width: 700px; max-height: 700px;
+  right: -10%; top: -26%;
+  background: radial-gradient(circle, rgba(184, 83, 58, 0.8) 0%, rgba(184, 83, 58, 0) 70%);
+  animation: ctaDriftB 32s ease-in-out infinite alternate;
+}
+@keyframes ctaDriftA {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(12%, -10%, 0) scale(1.15); }
+}
+@keyframes ctaDriftB {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-10%, 12%, 0) scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cta::before,
+  .cta::after { animation: none; }
 }
 .cta-inner {
   max-width: 900px;
@@ -1802,6 +1837,8 @@ body.menu-open { overflow: hidden; }
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  position: relative;
+  z-index: 1;
 }
 .cta .eyebrow { color: var(--saffron); }
 .cta-title {
