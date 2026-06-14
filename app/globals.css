@@ -2360,3 +2360,59 @@ body.menu-open { overflow: hidden; }
     transform: none !important;
   }
 }
+
+/* ============================================================
+   MOTION — generalized hover / reveal vocabulary
+   Sober, institutional: gold filet draw-in, measured, GPU-only,
+   reduced-motion aware. Pairs with ExpertiseDoor (Framer) reference.
+============================================================ */
+
+/* Signature: a gold filet draws in under section headings on reveal */
+.section-head h2 { position: relative; }
+.section-head h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  width: 64px;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s;
+}
+.section-head h2.in::after { transform: scaleX(1); }
+.section.tone-dark .section-head h2::after,
+.section.tone-plum .section-head h2::after { background: var(--saffron); }
+
+/* Cards: gold filet draw-in on hover (same vocabulary as ExpertiseDoor) */
+.prestation-card,
+.ref-card { position: relative; }
+.prestation-card::after,
+.ref-card::after {
+  content: "";
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 0;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ref-card::after { left: 28px; right: 28px; background: var(--saffron); }
+.prestation-card:hover::after,
+.ref-card:hover::after { transform: scaleX(1); }
+
+/* value-card: whisper-quiet top-rule accent on hover (no false click affordance) */
+.value-card { transition: border-top-color 0.4s ease; }
+.value-card:hover { border-top-color: var(--orange); }
+
+@media (prefers-reduced-motion: reduce) {
+  .section-head h2::after,
+  .prestation-card::after,
+  .ref-card::after,
+  .value-card { transition: none; }
+  .section-head h2.in::after { transform: scaleX(1); }
+}
