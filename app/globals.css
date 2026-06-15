@@ -73,34 +73,24 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   justify-content: space-between;
   align-items: center;
   padding: 22px 44px;
-}
-/* bar background as its own layer so it can fade in independently of the brand */
-.nav-bg {
-  position: absolute;
-  inset: 0;
   background: rgba(42, 20, 24, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-dark);
-  z-index: 0;
 }
-/* morphing wordmark — large in the hero, docks into the nav on scroll */
-.brand-morph {
-  position: relative;
-  z-index: 2;
-  transform-origin: left center;
-  will-change: transform;
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: 0.01em;
-  color: var(--saffron);
-  text-decoration: none;
-  white-space: nowrap;
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
 }
-/* while the wordmark is still travelling it must not block hero clicks */
-.nav-morphing .brand-morph { pointer-events: none; }
+/* logo via CSS mask so the single SVG recolours per context */
+.nav-logo-mark {
+  display: block;
+  width: 150px;
+  height: 28px;
+  background: var(--saffron);
+  -webkit-mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
+  mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
+}
 .nav-burger {
   position: relative;
   z-index: 2;
@@ -192,13 +182,13 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   margin-bottom: 80px;
   position: relative; z-index: 2;
 }
-.menu-logo-mark { height: 36px; width: auto; }
-.menu-wordmark {
-  font-family: var(--font-serif);
-  font-weight: 500;
-  font-size: 26px;
-  letter-spacing: 0.01em;
-  color: var(--saffron);
+.menu-logo-mark {
+  display: block;
+  width: 46px;
+  height: 46px;
+  background: var(--saffron);
+  -webkit-mask: url(/assets/astarte-symbole.svg) left center / contain no-repeat;
+  mask: url(/assets/astarte-symbole.svg) left center / contain no-repeat;
 }
 .menu-close {
   background: transparent;
@@ -952,12 +942,13 @@ body.menu-open { overflow: hidden; }
   border-bottom: 1px solid var(--line-dark);
 }
 .footer-wm {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 36px;
-  color: var(--saffron);
-  margin-bottom: 14px;
+  display: block;
+  width: 170px;
+  height: 40px;
+  margin-bottom: 18px;
+  background: var(--saffron);
+  -webkit-mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
+  mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
 }
 .footer-brand p {
   font-family: var(--font-sans);
@@ -1043,8 +1034,9 @@ body.menu-open { overflow: hidden; }
   gap: 40px;
 }
 .hero-top {
-  /* hidden on the home hero — the morphing KINAYA wordmark owns the top band */
-  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .hero-middle {
   display: flex;
@@ -2184,7 +2176,7 @@ body.menu-open { overflow: hidden; }
   transition: flex 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.6s ease;
 }
 .expertise-panel:first-of-type { border-left: none; }
-.expertise-panel:hover { flex: 2.6; }
+.expertise-panel:hover { flex: 2.2; }
 .expertise-panel.tone-analyser:hover { background: #E0863C; }
 .expertise-panel.tone-accompagner:hover { background: #BE5A38; }
 .expertise-panel.tone-developper:hover { background: #9E6B2C; }
@@ -2216,10 +2208,11 @@ body.menu-open { overflow: hidden; }
 .ep-title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(28px, 2.6vw, 44px);
+  font-size: clamp(23px, 2.1vw, 36px);
   line-height: 1.04;
   letter-spacing: 0.005em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: var(--aubergine);
   transition: color 0.4s ease;
 }

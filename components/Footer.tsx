@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <div className="footer-wm">Astarté</div>
+          <span className="footer-wm" role="img" aria-label="Astarté Conseils" />
           <p>
             Cabinet de conseil &amp; d&apos;études — Maghreb · Sahel.
             <br />
