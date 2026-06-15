@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/lib/nav-links";
+import { expertises } from "@/lib/expertises";
 
 function keyForPath(path: string): string {
   if (path === "/") return "home";
@@ -33,6 +34,8 @@ export default function Nav() {
     setMenuOpen(false);
   }, [pathname]);
 
+  const cls = (key: string) => (key === activeKey ? "is-active" : undefined);
+
   return (
     <>
       <header className="nav-shell" role="banner">
@@ -40,6 +43,35 @@ export default function Nav() {
           <span className="nav-logo-mark" aria-hidden="true" />
         </Link>
 
+        {/* Desktop horizontal navigation */}
+        <nav className="nav-links" aria-label="Navigation principale">
+          <Link href="/a-propos" className={cls("a-propos")}>À Propos</Link>
+          <Link href="/references" className={cls("references")}>Références</Link>
+          <Link href="/ressources" className={cls("ressources")}>Ressources</Link>
+
+          <div className="nav-expertise">
+            <Link
+              href="/expertises"
+              className={`nav-expertise-trigger ${cls("expertises") ?? ""}`}
+              aria-haspopup="true"
+            >
+              Expertise <span className="caret" aria-hidden="true">▾</span>
+            </Link>
+            <div className="nav-dropdown" role="menu">
+              <Link href="/expertises" role="menuitem" className="dropdown-all">
+                Toutes les expertises
+              </Link>
+              {expertises.map((e) => (
+                <Link key={e.slug} href={`/expertises/${e.slug}`} role="menuitem">
+                  <span className="dd-index">{e.index}</span>
+                  {e.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </nav>
+
+        {/* Mobile burger */}
         <button
           className="nav-burger"
           aria-label="Ouvrir le menu"
