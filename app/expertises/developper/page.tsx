@@ -24,8 +24,6 @@ export default function DevelopperPage() {
         lead="Nos formations ne sont pas des modules importés. Elles sont conçues à partir de vos dossiers, vos données, vos terrains — et elles laissent à l'organisation des outils qu'elle peut redéployer en interne, sans nous."
         ctaLabel="Construire un programme"
         ctaHref="/#contact"
-        imageSrc="/assets/expertise-developper.jpg"
-        imageAlt="Amphithéâtre en spirale et atome — pilier Développer"
       />
 
       <section className="section tone-cream">

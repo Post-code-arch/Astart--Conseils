@@ -24,8 +24,6 @@ export default function AccompagnerPage() {
         lead="L'évaluation, la stratégie et l'accompagnement opérationnel doivent produire des décisions — pas seulement des rapports. Nous travaillons aux côtés des équipes de pilotage pour transformer l'analyse en arbitrages concrets, sans dépossession."
         ctaLabel="Discuter d'une mission"
         ctaHref="/#contact"
-        imageSrc="/assets/expertise-accompagner.jpg"
-        imageAlt="Deux praticiennes franchissant un pont au crépuscule — pilier Accompagner"
       />
 
       <section className="section tone-cream">
