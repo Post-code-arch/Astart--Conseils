@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Cta from "@/components/Cta";
 
 export const metadata: Metadata = {
   title: "Ressources — Astarté Conseils",
@@ -119,18 +120,13 @@ export default function RessourcesPage() {
         </div>
       </section>
 
-      <section className="contact-strip">
-        <div className="contact-strip-inner">
-          <p className="eyebrow reveal"><span className="dot"></span> Recevoir nos publications</p>
-          <h2 className="reveal d1">Une publication par<br /><em>trimestre, sans fioritures.</em></h2>
-          <p className="reveal d2" style={{ fontFamily: "var(--font-sans)", fontWeight: 300, fontSize: "17px", lineHeight: 1.6, color: "var(--cream-muted)", maxWidth: "560px" }}>
-            Notre cahier annuel et nos notes courtes, directement par email.
-          </p>
-          <a href="mailto:contact@astarte-conseils.com?subject=Abonnement publications" className="btn-pill primary reveal d3" style={{ background: "var(--cream)", color: "var(--aubergine)", boxShadow: "none", marginTop: "8px" }}>
-            M&apos;abonner <span className="arrow">→</span>
-          </a>
-        </div>
-      </section>
+      <Cta
+        eyebrow="Recevoir nos publications"
+        title={<>Une publication par<br /><em>trimestre, sans fioritures.</em></>}
+        lead="Notre cahier annuel et nos notes courtes, directement par email."
+        ctaLabel="M'abonner"
+        ctaHref="mailto:contact@astarte-conseils.com?subject=Abonnement publications"
+      />
     </>
   );
 }

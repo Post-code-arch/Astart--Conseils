@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
+import Cta from "@/components/Cta";
 
 export const metadata: Metadata = {
   title: "Développer — Astarté Conseils",
@@ -144,19 +145,11 @@ export default function DevelopperPage() {
         </div>
       </section>
 
-      <section className="contact-strip">
-        <div className="contact-strip-inner">
-          <p className="eyebrow reveal"><span className="dot"></span> Construire un programme</p>
-          <h2 className="reveal d1">Un parcours sur mesure<br /><em>pour vos équipes.</em></h2>
-          <p className="reveal d2" style={{ fontFamily: "var(--font-sans)", fontWeight: 300, fontSize: "17px", lineHeight: 1.6, color: "var(--cream-muted)", maxWidth: "560px" }}>
-            Décrivez-nous votre besoin de montée en compétences. Nous reviendrons avec une proposition de cadrage.
-          </p>
-          <a href="mailto:contact@astarte-conseils.com" className="btn-pill primary reveal d3" style={{ background: "var(--cream)", color: "var(--aubergine)", boxShadow: "none", marginTop: "8px" }}>
-            contact@astarte-conseils.com
-            <span className="arrow">→</span>
-          </a>
-        </div>
-      </section>
+      <Cta
+        eyebrow="Construire un programme"
+        title={<>Un parcours sur mesure<br /><em>pour vos équipes.</em></>}
+        lead="Décrivez-nous votre besoin de montée en compétences. Nous reviendrons avec une proposition de cadrage."
+      />
     </>
   );
 }

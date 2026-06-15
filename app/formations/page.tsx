@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Cta from "@/components/Cta";
 
 export const metadata: Metadata = {
   title: "Formations — Astarté Conseils",
@@ -123,15 +124,10 @@ export default function FormationsPage() {
         </div>
       </section>
 
-      <section className="contact-strip">
-        <div className="contact-strip-inner">
-          <p className="eyebrow reveal"><span className="dot"></span> Construire un programme</p>
-          <h2 className="reveal d1">Un parcours sur mesure<br /><em>pour vos équipes.</em></h2>
-          <a href="mailto:contact@astarte-conseils.com" className="btn-pill primary reveal d2" style={{ background: "var(--cream)", color: "var(--aubergine)", boxShadow: "none", marginTop: "8px" }}>
-            contact@astarte-conseils.com <span className="arrow">→</span>
-          </a>
-        </div>
-      </section>
+      <Cta
+        eyebrow="Construire un programme"
+        title={<>Un parcours sur mesure<br /><em>pour vos équipes.</em></>}
+      />
     </>
   );
 }

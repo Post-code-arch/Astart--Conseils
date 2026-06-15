@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
+import Cta from "@/components/Cta";
 
 export const metadata: Metadata = {
   title: "Accompagner — Astarté Conseils",
@@ -144,19 +145,11 @@ export default function AccompagnerPage() {
         </div>
       </section>
 
-      <section className="contact-strip">
-        <div className="contact-strip-inner">
-          <p className="eyebrow reveal"><span className="dot"></span> Démarrer une mission</p>
-          <h2 className="reveal d1">Un programme à évaluer,<br /><em>une stratégie à cadrer ?</em></h2>
-          <p className="reveal d2" style={{ fontFamily: "var(--font-sans)", fontWeight: 300, fontSize: "17px", lineHeight: 1.6, color: "var(--cream-muted)", maxWidth: "560px" }}>
-            Décrivez-nous votre besoin. Nous reviendrons sous 48 heures avec une première lecture.
-          </p>
-          <a href="mailto:contact@astarte-conseils.com" className="btn-pill primary reveal d3" style={{ background: "var(--cream)", color: "var(--aubergine)", boxShadow: "none", marginTop: "8px" }}>
-            contact@astarte-conseils.com
-            <span className="arrow">→</span>
-          </a>
-        </div>
-      </section>
+      <Cta
+        eyebrow="Démarrer une mission"
+        title={<>Un programme à évaluer,<br /><em>une stratégie à cadrer&nbsp;?</em></>}
+        lead="Décrivez-nous votre besoin. Nous reviendrons sous 48 heures avec une première lecture."
+      />
     </>
   );
 }

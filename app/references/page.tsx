@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import ReferencesFilter from "@/components/ReferencesFilter";
+import Cta from "@/components/Cta";
 
 export const metadata: Metadata = {
   title: "Références — Astarté Conseils",
@@ -65,15 +66,10 @@ export default function ReferencesPage() {
         </div>
       </section>
 
-      <section className="contact-strip">
-        <div className="contact-strip-inner">
-          <p className="eyebrow reveal"><span className="dot"></span> Démarrer une mission</p>
-          <h2 className="reveal d1">Votre projet rejoint<br /><em>nos références ?</em></h2>
-          <a href="mailto:contact@astarte-conseils.com" className="btn-pill primary reveal d2" style={{ background: "var(--cream)", color: "var(--aubergine)", boxShadow: "none", marginTop: "8px" }}>
-            contact@astarte-conseils.com <span className="arrow">→</span>
-          </a>
-        </div>
-      </section>
+      <Cta
+        eyebrow="Démarrer une mission"
+        title={<>Votre projet rejoint<br /><em>nos références&nbsp;?</em></>}
+      />
     </>
   );
 }

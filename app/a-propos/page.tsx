@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Cta from "@/components/Cta";
 
 export const metadata: Metadata = {
   title: "À propos — Astarté Conseils",
@@ -93,15 +94,10 @@ export default function AProposPage() {
         </div>
       </section>
 
-      <section className="contact-strip">
-        <div className="contact-strip-inner">
-          <p className="eyebrow reveal"><span className="dot"></span> Parlons-en</p>
-          <h2 className="reveal d1">Une rencontre<br /><em>vaut souvent mieux qu&apos;un brief.</em></h2>
-          <a href="mailto:contact@astarte-conseils.com" className="btn-pill primary reveal d2" style={{ background: "var(--cream)", color: "var(--aubergine)", boxShadow: "none", marginTop: "8px" }}>
-            contact@astarte-conseils.com <span className="arrow">→</span>
-          </a>
-        </div>
-      </section>
+      <Cta
+        eyebrow="Parlons-en"
+        title={<>Une rencontre<br /><em>vaut souvent mieux qu&apos;un brief.</em></>}
+      />
     </>
   );
 }

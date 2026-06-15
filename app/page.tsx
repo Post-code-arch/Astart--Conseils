@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import MethodSection from "@/components/MethodSection";
+import Cta from "@/components/Cta";
 
 export default function Home() {
   return (
@@ -95,26 +96,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cta" id="contact">
-        <div className="cta-inner">
-          <p className="eyebrow"><span className="dot"></span> Démarrer une mission</p>
-          <h2 className="cta-title">Votre projet mérite<br /><em>une conversation.</em></h2>
-          <p className="cta-lead">
-            Décrivez-nous votre besoin — étude, évaluation, formation ou accompagnement.
-            Nous reviendrons vers vous sous 48 heures avec une première lecture et,
-            si pertinent, une proposition de cadrage.
-          </p>
-          <div className="cta-actions">
-            <a href="mailto:contact@astarte-conseils.com" className="cta-btn primary">
-              contact@astarte-conseils.com
-              <span>→</span>
-            </a>
-            <a href="tel:+213210000000" className="cta-btn ghost">
-              +213 21 00 00 00
-            </a>
-          </div>
-        </div>
-      </section>
+      <Cta
+        id="contact"
+        eyebrow="Démarrer une mission"
+        title={<>Votre projet mérite<br /><em>une conversation.</em></>}
+        lead="Décrivez-nous votre besoin — étude, évaluation, formation ou accompagnement. Nous reviendrons vers vous sous 48 heures avec une première lecture et, si pertinent, une proposition de cadrage."
+        phone="+213 21 00 00 00"
+      />
     </>
   );
 }
