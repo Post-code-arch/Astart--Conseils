@@ -15,7 +15,7 @@ export default function ExpertisePanels({ items }: { items: Expertise[] }) {
         </div>
         <div className="x-grid">
           {items.map((e) => (
-            <Link key={e.slug} href={`/expertises/${e.slug}`} className="x-col">
+            <Link key={e.slug} href={`/expertises/${e.slug}`} className={`x-col tone-${e.slug}`}>
               <h3 className="x-col-title">{e.title}</h3>
               <div className="x-col-foot">
                 <p className="x-col-accroche">{e.accroche}</p>

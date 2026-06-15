@@ -73,10 +73,8 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   justify-content: space-between;
   align-items: center;
   padding: 22px 44px;
-  background: rgba(42, 20, 24, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line-dark);
+  background: var(--orange);
+  border-bottom: 1px solid rgba(42, 20, 24, 0.14);
 }
 .nav-logo {
   display: inline-flex;
@@ -87,7 +85,7 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   display: block;
   width: 150px;
   height: 28px;
-  background: var(--saffron);
+  background: var(--aubergine);
   -webkit-mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
   mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
 }
@@ -101,16 +99,16 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
 .nav-expertise-trigger {
   font-family: var(--font-sans);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--cream);
+  color: var(--aubergine);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 .nav-links > a:hover,
 .nav-links > a.is-active,
 .nav-expertise:hover .nav-expertise-trigger,
-.nav-expertise-trigger.is-active { color: var(--saffron); }
+.nav-expertise-trigger.is-active { color: var(--cream); }
 .nav-expertise {
   position: relative;
   display: flex;
@@ -185,9 +183,9 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   gap: 12px;
   padding: 10px 18px 10px 14px;
   background: transparent;
-  border: 1px solid rgba(240, 181, 106, 0.5);
+  border: 1px solid rgba(42, 20, 24, 0.45);
   border-radius: 999px;
-  color: var(--saffron);
+  color: var(--aubergine);
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 500;
@@ -197,9 +195,9 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .nav-burger:hover {
-  background: var(--saffron);
-  color: var(--aubergine);
-  border-color: var(--saffron);
+  background: var(--aubergine);
+  color: var(--cream);
+  border-color: var(--aubergine);
 }
 .nav-burger .lines {
   display: inline-flex;
@@ -2227,16 +2225,18 @@ body.menu-open { overflow: hidden; }
   transition: background 0.4s ease;
 }
 .x-col:first-child { border-left: none; }
-.x-col:hover { background: rgba(232, 133, 58, 0.06); }
+.x-col.tone-analyser:hover { background: #E0863C; }
+.x-col.tone-accompagner:hover { background: #BE5A38; }
+.x-col.tone-developper:hover { background: #9E6B2C; }
 .x-col-title {
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: clamp(34px, 3.4vw, 60px);
   line-height: 1.02;
   color: var(--aubergine);
-  transition: color 0.3s ease;
+  transition: color 0.4s ease, transform 0.4s ease;
 }
-.x-col:hover .x-col-title { color: var(--rust); }
+.x-col:hover .x-col-title { color: var(--cream); transform: translateX(6px); }
 .x-col-foot { margin-top: auto; display: flex; flex-direction: column; gap: 18px; }
 .x-col-accroche {
   font-family: var(--font-sans);
@@ -2245,21 +2245,24 @@ body.menu-open { overflow: hidden; }
   line-height: 1.65;
   color: var(--aub-muted);
   max-width: 340px;
+  transition: color 0.4s ease;
 }
+.x-col:hover .x-col-accroche { color: var(--cream); }
 .x-col-cta {
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--rust);
+  color: var(--cream);
   display: inline-flex;
   align-items: center;
   gap: 8px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.x-col:hover .x-col-cta { opacity: 1; }
+.x-col:hover .x-col-cta { opacity: 1; transform: none; }
 .x-col-cta .arrow { transition: transform 0.3s; }
 .x-col:hover .x-col-cta .arrow { transform: translateX(4px); }
 
