@@ -83,11 +83,11 @@ button { background: none; border: none; color: inherit; font: inherit; cursor: 
 /* logo via CSS mask so the single SVG recolours per context */
 .nav-logo-mark {
   display: block;
-  width: 150px;
-  height: 28px;
+  width: 56px;
+  height: 34px;
   background: var(--aubergine);
-  -webkit-mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
-  mask: url(/assets/astarte-lockup-horizontal.svg) left center / contain no-repeat;
+  -webkit-mask: url(/assets/astarte-symbole.svg) left center / contain no-repeat;
+  mask: url(/assets/astarte-symbole.svg) left center / contain no-repeat;
 }
 /* Desktop horizontal navigation + deploying Expertise dropdown */
 .nav-links {
@@ -1055,7 +1055,12 @@ body.menu-open { overflow: hidden; }
   display: flex;
   align-items: stretch;
   overflow: hidden;
-  background: #1E1E1E;
+  background-color: #1E1E1E;
+  background-image:
+    linear-gradient(180deg, rgba(15, 16, 20, 0.55) 0%, rgba(15, 16, 20, 0.18) 38%, rgba(15, 16, 20, 0.82) 100%),
+    url(/assets/hero-home.jpg);
+  background-size: cover;
+  background-position: center;
 }
 .hero-bg {
   /* hidden — flat placeholder background until the hero image is provided */
@@ -2194,34 +2199,47 @@ body.menu-open { overflow: hidden; }
    EXPERTISE SELECTOR
 ============================================================ */
 /* DESKTOP — doctrine heading band + 3-column grid */
-.x-desktop { display: block; }
+.x-desktop {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  padding-top: 76px; /* clear the fixed nav */
+  overflow: hidden;
+}
 .x-head {
   background: var(--plum);
-  padding: 96px 56px;
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  padding: 30px 56px;
 }
 .x-head-title {
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(44px, 5.6vw, 92px);
+  font-size: clamp(40px, 4.8vw, 82px);
   line-height: 1.04;
   letter-spacing: -0.01em;
   color: var(--saffron);
 }
 .x-head-title em { font-style: italic; color: var(--sand); }
 .x-grid {
+  flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  min-height: 76vh;
   background: var(--cream);
 }
 .x-col {
   display: flex;
   flex-direction: column;
-  padding: 72px 48px;
+  padding: 50px 48px;
   border-left: 1px solid var(--line);
   text-decoration: none;
+  overflow: hidden;
   transition: background 0.4s ease;
 }
 .x-col:first-child { border-left: none; }
