@@ -3,18 +3,18 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-content">
         <p className="eyebrow hero-eyebrow">
-          <span className="dot"></span> Cabinet de conseil &amp; études — Afrique du Nord
+          <span className="dot"></span> Bureau d&apos;études &amp; de Conseils — Algérie · Afrique du Nord · Sahel
         </p>
 
         <div className="hero-foot">
           <h1 className="hero-title">
             Vos décisions méritent des analyses{" "}
-            <em>que vous pouvez défendre.</em>
+            <em>que vous pouvez porter et défendre.</em>
           </h1>
           <p className="hero-lead">
-            Les organisations qui opèrent en Algérie et au Maghreb font face à des terrains
-            complexes. Nous produisons les études, évaluations et formations qui leur permettent
-            d&apos;agir avec autorité.
+            Les organisations et entreprises qui opèrent en Afrique du Nord et au Sahel font face à
+            des terrains complexes. Nous produisons les études, évaluations et formations qui leur
+            permettent d&apos;agir en pleine maîtrise de leurs enjeux.
           </p>
         </div>
       </div>

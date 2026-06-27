@@ -21,7 +21,7 @@ export default function AccompagnerPage() {
             <em>ajuster ce qui doit l&apos;être.</em>
           </>
         }
-        lead="L'évaluation, la stratégie et l'accompagnement opérationnel doivent produire des décisions — pas seulement des rapports. Nous travaillons aux côtés des équipes de pilotage pour transformer l'analyse en arbitrages concrets, sans dépossession."
+        lead="L'évaluation, la stratégie et l'accompagnement opérationnel doivent guider des décisions éclairées. Nous travaillons aux côtés des équipes pour transformer l'analyse en arbitrages concrets, sans dépossession."
         ctaLabel="Discuter d'une mission"
         ctaHref="/#contact"
       />
@@ -33,18 +33,18 @@ export default function AccompagnerPage() {
             <h2 className="reveal d1">L&apos;évaluation comme <em>outil<br />de pilotage.</em></h2>
           </div>
           <p className="reveal d2">
-            Nos évaluations ne sont pas des exercices de redevabilité formelle. Elles sont conçues pour
-            produire des décisions — réorientation, mise à l&apos;échelle, arrêt d&apos;une activité qui ne fonctionne pas.
+            Nos évaluations de projets et d&apos;axes d&apos;intervention ne sont pas que des exercices de
+            redevabilité formelle. Elles sont conçues pour soutenir les décisions — réorientation,
+            mise à l&apos;échelle, arrêt d&apos;une activité qui ne fonctionne pas.
           </p>
         </div>
 
         <div className="values-grid">
-          <div className="value-card reveal d1"><div className="num">01.</div><h3>Théorie du changement explicite</h3><p>Avant d&apos;évaluer, nous reconstituons la logique d&apos;intervention initiale. C&apos;est cette théorie que nous testons — pas un cadre d&apos;évaluation générique.</p></div>
-          <div className="value-card reveal d2"><div className="num">02.</div><h3>Critères CAD adaptés</h3><p>Pertinence, efficacité, efficience, impact, durabilité — appliqués avec sens, pas comme une checklist. Nous arbitrons selon ce qui est utile au commanditaire.</p></div>
-          <div className="value-card reveal d3"><div className="num">03.</div><h3>Évaluation contributive</h3><p>Quand l&apos;attribution stricte est impossible, nous documentons la contribution : chaînes causales plausibles, alternatives explorées, niveau de confiance assumé.</p></div>
-          <div className="value-card reveal d1"><div className="num">04.</div><h3>Recommandations actionnables</h3><p>Chaque recommandation est attribuée à un porteur, formulée comme une décision possible, et hiérarchisée selon coût et urgence.</p></div>
-          <div className="value-card reveal d2"><div className="num">05.</div><h3>Restitution comme dialogue</h3><p>Les ateliers de restitution sont conçus comme des moments d&apos;appropriation — pas une présentation de rapport. Le commanditaire repart avec des décisions.</p></div>
-          <div className="value-card reveal d3"><div className="num">06.</div><h3>Discrétion et indépendance</h3><p>Nous écrivons ce que nous observons, même quand cela nuance la posture initiale. Confidentialité absolue sur les données et les sources.</p></div>
+          <div className="value-card reveal d1"><div className="num">01.</div><h3>Approche transformatrice</h3><p>Avant d&apos;évaluer, nous reconstituons la logique d&apos;intervention initiale et vérifions les hypothèses de changement sur lesquelles elle reposait. C&apos;est cette approche qui est au cœur de notre démarche, , pas seulement ses résultats.</p></div>
+          <div className="value-card reveal d2"><div className="num">02.</div><h3>Critères définis ensemble</h3><p>Pertinence, efficacité, efficience, impact, durabilité — nous définissons avec vous les critères retenus et leur pondération avant toute collecte. L&apos;évaluation répond à vos questions, pas à un cadre générique.</p></div>
+          <div className="value-card reveal d3"><div className="num">03.</div><h3>Recommandations actionnables</h3><p>Chaque recommandation est formulée comme une option concrète, hiérarchisée selon vos priorités et validée avec vos équipes.</p></div>
+          <div className="value-card reveal d1"><div className="num">04.</div><h3>Restitution et dialogue continu</h3><p>Les ateliers de restitution sont conçus comme des moments d&apos;appropriation collective et d&apos;échange. Les parties prenantes valident les constats, enrichissent l&apos;analyse et s&apos;approprient les recommandations avant le rapport final.</p></div>
+          <div className="value-card reveal d2"><div className="num">05.</div><h3>Transparence, confidentialité et indépendance</h3><p>Nous écrivons ce que nous observons, même quand cela nuance la posture initiale. Confidentialité absolue sur les données et les sources.</p></div>
         </div>
       </section>
 
@@ -54,16 +54,15 @@ export default function AccompagnerPage() {
             <p className="eyebrow reveal"><span className="dot"></span> Prestations</p>
             <h2 className="reveal d1">Ce que nous <em>livrons<br />concrètement.</em></h2>
           </div>
-          <p className="reveal d2">Chaque mission donne lieu à des livrables structurés, défendables, directement utilisables.</p>
+          <p className="reveal d2">Chaque mission donne lieu à des livrables structurés, argumentés, directement utilisables.</p>
         </div>
 
         <div className="prestations-grid">
           <article className="prestation-card reveal d1">
-            <div className="prestation-meta"><span><span className="marker"></span>6 à 10 semaines</span><span>FR / AR</span></div>
             <h3>Évaluation mi-parcours</h3>
             <p>Bilan intermédiaire d&apos;un programme en cours : ce qui fonctionne, ce qui doit être réorienté, et comment ajuster pour la phase finale.</p>
             <ul className="prestation-modules">
-              <li>Cadrage et reconstitution de la TdC</li>
+              <li>Cadrage et reconstitution de la de la logique d&apos;intervention</li>
               <li>Collecte terrain ciblée</li>
               <li>Restitution participative</li>
               <li>Rapport + plan d&apos;ajustement</li>
@@ -71,38 +70,39 @@ export default function AccompagnerPage() {
             <Link href="/#contact" className="prestation-link">Demander un devis <span className="arrow">→</span></Link>
           </article>
           <article className="prestation-card reveal d2">
-            <div className="prestation-meta"><span><span className="marker"></span>10 à 16 semaines</span><span>FR / AR</span></div>
             <h3>Évaluation finale</h3>
-            <p>Bilan complet en fin de cycle : résultats obtenus, impacts attribuables, durabilité, leçons pour la suite. Livrable de qualité bailleur.</p>
+            <p>Bilan complet en fin de cycle : résultats obtenus, impacts attribuables, durabilité, leçons pour la suite. Livrable documenté, rigoureux et présentable à vos partenaires et financeurs.</p>
             <ul className="prestation-modules">
               <li>Cadrage et critères d&apos;évaluation</li>
               <li>Collecte mixte (quanti + quali)</li>
               <li>Analyse contributive</li>
+              <li>Rapport préliminaire pour commentaires</li>
               <li>Rapport + synthèse exécutive</li>
+              <li>Présentation de restitution (sur demande)</li>
+              <li>Annexes méthodologiques (sur demande)</li>
             </ul>
             <Link href="/#contact" className="prestation-link">Demander un devis <span className="arrow">→</span></Link>
           </article>
           <article className="prestation-card reveal d1">
-            <div className="prestation-meta"><span><span className="marker"></span>4 à 8 semaines</span><span>FR</span></div>
             <h3>Stratégie ou note de positionnement</h3>
             <p>Aide à la décision pour cadrer une nouvelle phase, une réorientation ou un positionnement institutionnel. Format synthétique et structuré.</p>
             <ul className="prestation-modules">
-              <li>Diagnostic interne</li>
+              <li>Revue documentaire et consultations internes</li>
               <li>Analyse de l&apos;environnement</li>
               <li>Scénarios d&apos;options</li>
-              <li>Note stratégique 20-40 pages</li>
             </ul>
             <Link href="/#contact" className="prestation-link">Demander un devis <span className="arrow">→</span></Link>
           </article>
           <article className="prestation-card reveal d2">
-            <div className="prestation-meta"><span><span className="marker"></span>Sur 6 à 24 mois</span><span>FR / AR</span></div>
             <h3>Accompagnement au pilotage</h3>
-            <p>Mission longue d&apos;appui à une équipe projet : design d&apos;indicateurs, mise en place du système de suivi, points trimestriels.</p>
+            <p>Mission longue d&apos;appui à une équipe projet : design d&apos;indicateurs, mise en place du système de suivi, points de suivi périodique.</p>
             <ul className="prestation-modules">
               <li>Cadre logique &amp; indicateurs</li>
               <li>Outillage de suivi</li>
-              <li>Bilans trimestriels</li>
-              <li>Transfert de méthode à l&apos;équipe</li>
+              <li>Points de suivi périodiques</li>
+              <li>Conception des outils de collecte</li>
+              <li>Appui au reporting partenaires et/ou financeurs (sur demande)</li>
+              <li>Transfert de compétences méthodologique à l&apos;équipe</li>
             </ul>
             <Link href="/#contact" className="prestation-link">Demander un devis <span className="arrow">→</span></Link>
           </article>
@@ -123,8 +123,8 @@ export default function AccompagnerPage() {
           <div className="refs-grid">
             <article className="ref-card reveal d1">
               <span className="ref-tag">Accompagner</span>
-              <div className="ref-client">GIZ · Maroc &amp; Algérie</div>
-              <h3>Évaluation mi-parcours d&apos;un programme d&apos;entrepreneuriat féminin régional</h3>
+              <div className="ref-client">GIZ · Algérie</div>
+              <h3>Évaluation mi-parcours d&apos;un programme d&apos;entrepreneuriat des femmesféminin régional</h3>
               <p className="ref-result"><strong>Résultat</strong>Recommandations adoptées à 80% par le comité de pilotage. Réorientation budgétaire de 12% en phase 2.</p>
             </article>
             <article className="ref-card reveal d2">

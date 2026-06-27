@@ -16,7 +16,7 @@ export default function ExpertisesPage() {
       <Cta
         eyebrow="Une question, un projet"
         title={<>Pas sûr de la bonne porte&nbsp;?<br /><em>Parlons-en.</em></>}
-        lead="Décrivez-nous votre besoin — nous vous orienterons vers le pôle le plus pertinent, ou une combinaison des trois."
+        lead="Décrivez-nous votre besoin — nous vous orienterons vers le pôle le plus pertinent."
       />
     </>
   );

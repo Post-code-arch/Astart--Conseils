@@ -10,7 +10,7 @@ export default function ExpertisePanels({ items }: { items: Expertise[] }) {
       <section className="x-desktop">
         <div className="x-head">
           <h2 className="x-head-title">
-            Trois gestes, <em>/ une seule doctrine.</em>
+            Trois interventions, <em>/ une seule approche.</em>
           </h2>
         </div>
         <div className="x-grid">

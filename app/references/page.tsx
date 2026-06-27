@@ -55,14 +55,10 @@ export default function ReferencesPage() {
         </div>
 
         <div className="clients-grid-page">
-          <div className="client-card reveal d1" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>Union Européenne</h4><p style={{ color: "var(--cream-muted)" }}>Coopération régionale</p></div>
+          <div className="client-card reveal d1" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>Délégation de l&apos;Union Européenne</h4><p style={{ color: "var(--cream-muted)" }}>Coopération régionale</p></div>
           <div className="client-card reveal d1" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>GIZ</h4><p style={{ color: "var(--cream-muted)" }}>Coopération allemande</p></div>
-          <div className="client-card reveal d2" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>Oxfam</h4><p style={{ color: "var(--cream-muted)" }}>ONG internationale</p></div>
           <div className="client-card reveal d2" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>SCAC</h4><p style={{ color: "var(--cream-muted)" }}>Ambassade de France</p></div>
-          <div className="client-card reveal d3" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>ONU Femmes</h4><p style={{ color: "var(--cream-muted)" }}>Système des Nations Unies</p></div>
-          <div className="client-card reveal d3" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>FES</h4><p style={{ color: "var(--cream-muted)" }}>Friedrich-Ebert-Stiftung</p></div>
-          <div className="client-card reveal d4" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>Banque Mondiale</h4><p style={{ color: "var(--cream-muted)" }}>Institutions financières</p></div>
-          <div className="client-card reveal d4" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>Min. Formation Prof.</h4><p style={{ color: "var(--cream-muted)" }}>État algérien</p></div>
+          <div className="client-card reveal d2" style={{ background: "rgba(248,246,234,0.04)", borderColor: "var(--line-dark)" }}><h4 style={{ color: "var(--cream)" }}>FES</h4><p style={{ color: "var(--cream-muted)" }}>Friedrich-Ebert-Stiftung</p></div>
         </div>
       </section>
 

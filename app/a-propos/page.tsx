@@ -13,9 +13,9 @@ export default function AProposPage() {
         <div className="page-hero-grain" aria-hidden="true"></div>
         <div className="page-hero-inner">
           <div className="page-hero-text">
-            <p className="eyebrow reveal"><span className="dot"></span> Cabinet de conseil &amp; études · Fondé en 2010</p>
+            <p className="eyebrow reveal"><span className="dot"></span> Bureau d&apos;études &amp; de Conseils · Fondé en 2021</p>
             <h1 className="page-hero-title reveal d1">
-              Un cabinet né de la connaissance<br />
+              Un bureau né de la connaissance<br />
               <em>du terrain.</em>
             </h1>
             <div className="page-hero-bottom">
@@ -39,17 +39,13 @@ export default function AProposPage() {
         </div>
 
         <div className="manifesto-body">
-          <p className="reveal">Il y a, dans le métier du conseil, deux postures qui ne se rejoignent jamais tout à fait. La première consiste à apporter une grille — un modèle, une méthode, une matrice — et à demander au réel de s&apos;y plier. La seconde, plus rare, consiste à entrer dans un terrain, à se taire d&apos;abord, à écouter longtemps, et à n&apos;écrire qu&apos;ensuite.</p>
+          <p className="reveal">Il y a, dans le métier du conseil, deux postures qui coexistent rarement. La première consiste à mobiliser une grille — un modèle, une méthode, une matrice — et à demander au réel de s&apos;y conformer. La seconde, consiste à entrer dans un terrain, à observer avant de conclure, à écouter avant d&apos;écrire.</p>
 
-          <p className="reveal d1">Astarté Conseils appartient à la seconde école. Non par posture, ni par effet de style, mais parce que notre histoire ne nous laissait pas d&apos;autre choix : nous sommes nées sur ce terrain, nous y avons grandi, nous y avons travaillé, et nous savons que rien — ni le diplôme le plus prestigieux, ni la méthode la plus éprouvée — ne remplace cette familiarité-là.</p>
+          <p className="reveal d1">C&apos;est cette seconde posture qu&apos;Astarté Conseils s&apos;efforce d&apos;adopter. Non comme un principe affiché, mais comme une exigence méthodologique : la connaissance d&apos;un terrain de l&apos;intérieur ; ses logiques, ses silences, ses résistances, ne se substitue pas à la rigueur analytique, mais elle la conditionne. Aucune méthode, aussi éprouvée soit-elle, ne produit de résultats fiables sans cette familiarité préalable avec le contexte. C&apos;est ce que nous cherchons à mettre en œuvre, quelle que soit la nature du commanditaire — organisation internationale, institution publique ou entreprise privée.</p>
 
           <div className="pull reveal d2">
             Nous ne vendons pas des livrables. Nous fabriquons des analyses que vous pourrez <em>défendre,</em> ligne après ligne, devant n&apos;importe quelle audience.
           </div>
-
-          <p className="reveal d1">Vous trouverez ici nos convictions, notre méthode, et nos trois piliers d&apos;intervention — analyser, accompagner, développer. Vous trouverez aussi nos doutes, parce qu&apos;aucune mission sérieuse ne se mène sans eux.</p>
-
-          <p className="reveal d2">Lisez-le comme un guide, un témoignage, ou une invitation à conversation. Nous serons toujours plus utiles si nous nous parlons tôt.</p>
         </div>
       </section>
 
@@ -66,14 +62,29 @@ export default function AProposPage() {
             <div className="founder-portrait">F.K.</div>
             <span className="role">Co-fondatrice · Direction études</span>
             <h3>Feriel Kessai</h3>
-            <p>Sociologue, docteure en sciences sociales (EHESS, Paris). Quinze années de pratique du conseil en Afrique du Nord. Expertise sur les politiques publiques, les questions de genre et l&apos;évaluation. Enseigne à l&apos;Université d&apos;Alger et publie régulièrement.</p>
+            <p>Experte en études et diagnostics appliqués aux programmes de coopération en Afrique du Nord et au Sahel, Feriel a plus de treize ans d&apos;expérience dans la conception et la conduite d&apos;analyses pour des institutions, des organisations internationales et des structures publiques. Formée en France (Master en développement à l&apos;IEDES – Université Paris 1 Panthéon-Sorbonne), elle pilote des études de référence, des cartographies, des évaluations et des notes d&apos;analyse, ainsi que des formations et outils pédagogiques destinés aux équipes de terrain et aux professionnel·le·s.</p>
           </div>
           <div className="founder reveal d2">
             <div className="founder-portrait">S.H.</div>
             <span className="role">Co-fondatrice · Direction opérationnelle</span>
             <h3>Sanaa Hamadouche</h3>
-            <p>Économiste, master en économie du développement (Paris-Dauphine). Dix-huit années d&apos;expérience dans le conseil et l&apos;évaluation de programmes. Pilote les missions stratégiques et les programmes de formation. Membre du réseau régional d&apos;évaluation EvalMaghreb.</p>
+            <p>Spécialiste de l&apos;appui méthodologique et de l&apos;animation de formations pour des équipes de projet, Sanaa cumule plus de quinze ans d&apos;expérience dans la coopération, la coordination de programmes et la conception de contenus de formation en Afrique du Nord. Formée en France (Masters en relations euro-méditerranéennes à l&apos;Université Paris 8 et en études arabes à l&apos;Université Lyon 2), elle co-construit des études, relit et structure des rapports, et conçoit des ateliers et parcours pédagogiques qui aident les organisations à transformer leurs analyses en pratiques concrètes. Elle pilote également des études et évaluations de terrain, notamment dans des contextes d&apos;accès complexe.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="section tone-cream">
+        <div className="section-head" style={{ gridTemplateColumns: "1fr", maxWidth: "880px" }}>
+          <div>
+            <p className="eyebrow reveal"><span className="dot"></span> Réseau</p>
+            <h2 className="reveal d1">Notre réseau d&apos;expertes<br />&amp; <em>d&apos;experts.</em></h2>
+          </div>
+        </div>
+
+        <div className="manifesto-body">
+          <p className="reveal">Astarté Conseils, c&apos;est aussi un réseau de consultant·e·s et de chercheur·se·s avec lesquels nous collaborons régulièrement — selon les besoins spécifiques de chaque mission.</p>
+          <p className="reveal d1">Spécialistes sectoriels, expert·e·s thématiques, profils de terrain : nous mobilisons les compétences les plus pertinentes pour chaque contexte, en Algérie et au-delà.</p>
+          <p className="reveal d2">Ce réseau n&apos;est pas un annuaire. C&apos;est une communauté de praticien·ne·s que nous connaissons, avec qui nous avons travaillé, et dont nous pouvons garantir la rigueur.</p>
         </div>
       </section>
 
@@ -83,7 +94,7 @@ export default function AProposPage() {
             <p className="eyebrow reveal"><span className="dot"></span> Repères chiffrés</p>
             <h2 className="reveal d1">Ce que quinze ans<br /><em>de pratique veulent dire.</em></h2>
           </div>
-          <p className="reveal d2">Ces chiffres ne disent pas tout, mais ils disent quelque chose. Une volumétrie qui permet la comparaison, plusieurs cycles politiques traversés, et un certain nombre d&apos;erreurs dont nous avons appris.</p>
+          <p className="reveal d2">Ces chiffres ne disent pas tout, mais ils indiquent notre engagement. Une volumétrie comparative, la mémoire de plusieurs cycles sociopolitiques, et un certain nombre d&apos;enseignements qui nous ont permis de mieux ajuster notre service.</p>
         </div>
 
         <div className="stats-strip">

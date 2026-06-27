@@ -420,6 +420,7 @@ body.menu-open { overflow: hidden; }
 .proof-stat:nth-child(2) { transition-delay: 0.15s; }
 .proof-stat:nth-child(3) { transition-delay: 0.25s; }
 .proof-stat:nth-child(4) { transition-delay: 0.35s; }
+.proof-stat:nth-child(5) { transition-delay: 0.45s; }
 
 .diff-item:nth-child(1) { transition-delay: 0.05s; }
 .diff-item:nth-child(2) { transition-delay: 0.15s; }
@@ -891,6 +892,31 @@ body.menu-open { overflow: hidden; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+/* Références catégorisées (pilier Analyser) */
+.ref-group {
+  margin-top: 56px;
+}
+.ref-group:first-of-type {
+  margin-top: 40px;
+}
+.ref-group-title {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin: 0 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-dark);
+}
+.ref-note {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--cream-muted);
+  margin: 0;
 }
 .ref-card {
   background: rgba(248, 246, 234, 0.05);
@@ -1709,7 +1735,7 @@ body.menu-open { overflow: hidden; }
   max-width: 1440px;
   margin: 0 auto 80px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 30px;
 }
 .proof-stat {
@@ -1722,7 +1748,7 @@ body.menu-open { overflow: hidden; }
 .proof-stat .num {
   font-family: var(--font-serif);
   font-weight: 300;
-  font-size: 110px;
+  font-size: 82px;
   line-height: 0.9;
   letter-spacing: -0.04em;
   color: var(--saffron);

@@ -18,9 +18,9 @@ const panels: {
     num: "01",
     eyebrow: "Pilier · Analyser",
     title: <>Études, recherches,<br /><em>diagnostics.</em></>,
-    body: "Vous avez besoin de données fiables pour orienter vos décisions, justifier vos interventions ou comprendre un contexte avant d'agir. Nous menons l'enquête sur le terrain, croisons les sources, et livrons des analyses tracées jusqu'à leur source.",
+    body: "Vous avez besoin de données fiables pour orienter vos décisions, justifier vos interventions ou comprendre un contexte avant d'agir. Nous menons l'étude sur le terrain, croisons les sources, et livrons des analyses solides, documentées et directement utilisables.",
     list: [
-      "Études socio-économiques & sectorielles",
+      "Études socio-techniques & sectorielles",
       "Recherches qualitatives & quantitatives",
       "Diagnostics organisationnels & territoriaux",
       "Analyses de contexte & veille stratégique",
@@ -32,7 +32,7 @@ const panels: {
     num: "02",
     eyebrow: "Pilier · Accompagner",
     title: <>Évaluations, stratégies,<br /><em>accompagnement.</em></>,
-    body: "Vous conduisez un projet et avez besoin d'un regard externe pour mesurer ce qui fonctionne, ajuster, et maximiser l'impact. Nous travaillons à vos côtés sans dépossession — la décision reste vôtre.",
+    body: "Vous conduisez un projet et avez besoin d'un regard externe pour mesurer ce qui fonctionne, ajuster le cap et renforcer l'impact. Nous travaillons à vos côtés, sans dépossession — la décision reste la vôtre.",
     list: [
       "Évaluations à mi-parcours & finales",
       "Stratégies opérationnelles & institutionnelles",
@@ -46,11 +46,11 @@ const panels: {
     num: "03",
     eyebrow: "Pilier · Développer",
     title: <>Formations &amp; renforcement<br /><em>de capacités.</em></>,
-    body: "Vous souhaitez monter en compétences vos équipes ou accompagner des bénéficiaires avec des outils ancrés dans les réalités locales. Nous concevons et animons des dispositifs sur mesure — pas des modules importés.",
+    body: "Vous souhaitez monter en compétences, ou renforcer celles de vos équipes, avec des contenus et des outils ancrés dans vos réalités. Nous concevons et animons des dispositifs sur mesure pensés avec vous — pas du prêt à penser.",
     list: [
-      "Formations pour ONG & institutions",
-      "Programmes de renforcement de capacités",
-      "Coaching individuel & collectif",
+      "Formations pour institutions nationales et internationales",
+      "Programmes de renforcement de capacités personnalisé",
+      "Accompagnement individuel & collectif",
       "Ingénierie pédagogique & supports",
     ],
     href: "/expertises/developper",
@@ -65,13 +65,13 @@ export default function MethodSection() {
       <div className="method-head">
         <p className="eyebrow"><span className="dot"></span> Notre approche</p>
         <h2 className="method-title">
-          Trois gestes,<br />
-          <em>une seule doctrine.</em>
+          Trois interventions,<br />
+          <em>une seule approche.</em>
         </h2>
         <p className="method-lead">
-          Notre pratique articule trois pôles d&apos;intervention qui se complètent.
+          Notre pratique s&apos;articule autour de trois pôles qui se complètent.
           Chaque mission entre par la porte qui correspond à son enjeu —
-          et peut articuler les trois selon les phases du projet.
+          et peut mobiliser les trois, selon les phases du projet.
         </p>
       </div>
 

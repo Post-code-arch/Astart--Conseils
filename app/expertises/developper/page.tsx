@@ -40,11 +40,12 @@ export default function DevelopperPage() {
 
         <div className="values-grid">
           <div className="value-card reveal d1"><div className="num">01.</div><h3>Diagnostic préalable</h3><p>Aucune session ne démarre sans cadrage avec le commanditaire et test de positionnement des participants. Le programme s&apos;adapte aux niveaux réels.</p></div>
-          <div className="value-card reveal d2"><div className="num">02.</div><h3>Cas d&apos;application réels</h3><p>Les exercices sont construits à partir des dossiers en cours dans l&apos;organisation cliente — pas des cas génériques tirés d&apos;un manuel.</p></div>
-          <div className="value-card reveal d3"><div className="num">03.</div><h3>Binôme d&apos;experts</h3><p>Chaque session est animée par deux intervenants — un méthodologique et un sectoriel — pour garantir profondeur et adaptation.</p></div>
-          <div className="value-card reveal d1"><div className="num">04.</div><h3>Suivi post-formation</h3><p>Trois mois après la session, point d&apos;application avec un échantillon de participants et restitution au commanditaire.</p></div>
-          <div className="value-card reveal d2"><div className="num">05.</div><h3>Livrables réutilisables</h3><p>Chaque programme laisse à l&apos;organisation manuels, gabarits et grilles d&apos;analyse qu&apos;elle peut redéployer en interne.</p></div>
-          <div className="value-card reveal d3"><div className="num">06.</div><h3>Bilingue par défaut</h3><p>Tous nos supports existent en français et en arabe. Les sessions sont animées dans la langue de travail de l&apos;organisation.</p></div>
+          <div className="value-card reveal d2"><div className="num">02.</div><h3>Ingénierie pédagogique sur mesure</h3><p>Nous n&apos;adaptons pas un module existant — nous concevons le programme à partir de vos besoins, en partant de vos objectifs, de votre public et de votre contexte organisationnel.</p></div>
+          <div className="value-card reveal d3"><div className="num">03.</div><h3>Cas d&apos;application réels</h3><p>Les exercices sont construits à partir des dossiers et/ou situations en cours dans l&apos;organisation cliente — pas des cas génériques tirés d&apos;un manuel.</p></div>
+          <div className="value-card reveal d1"><div className="num">04.</div><h3>Binôme d&apos;experts</h3><p>Selon la complexité de la mission, nos sessions associent un profil méthodologique et un profil sectoriel.</p></div>
+          <div className="value-card reveal d2"><div className="num">05.</div><h3>Suivi post-formation</h3><p>Si le client le demande, dans les trois mois suivant la session, point d&apos;application avec un échantillon de participants et restitution au commanditaire.</p></div>
+          <div className="value-card reveal d3"><div className="num">06.</div><h3>Livrables réutilisables</h3><p>Chaque programme laisse à l&apos;organisation manuels, gabarits et grilles d&apos;analyse qu&apos;elle peut redéployer en interne.</p></div>
+          <div className="value-card reveal d1"><div className="num">07.</div><h3>Français, Anglais, Arabe</h3><p>Nos supports sont produits dans la langue de votre choix. Les sessions sont animées dans la langue de travail de l&apos;organisation.</p></div>
         </div>
       </section>
 

@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="footer-brand">
           <span className="footer-wm" role="img" aria-label="Astarté Conseils" />
           <p>
-            Cabinet de conseil &amp; d&apos;études — Maghreb · Sahel.
+            Bureau d&apos;études &amp; de Conseils — Algérie · Afrique du Nord · Sahel.
             <br />
-            Fondé en 2010 à Alger.
+            Fondé en 2021 à Alger.
           </p>
         </div>
         <div className="footer-links">
@@ -49,11 +49,15 @@ export default function Footer() {
         <div className="footer-contact">
           <h6>Contact</h6>
           <p>
-            Alger · Tunis · Casablanca
-            <br />
             contact@astarte-conseils.com
             <br />
-            +213 21 00 00 00
+            kessai@astarte-conseils.org
+            <br />
+            hamadouche@astarte-conseils.org
+            <br />
+            +213 553 47 45 97
+            <br />
+            25, Rue Rabah Bourbia, El Biar (près du balcon Saint Raphaël), Alger, Algérie
           </p>
         </div>
       </div>

@@ -7,6 +7,85 @@ export const metadata: Metadata = {
   title: "Analyser — Astarté Conseils",
 };
 
+// Références Analyser — liste catégorisée (doc de référence éditorial).
+const refGroups: { group: string; items: { title: string; client: string; body: string }[] }[] = [
+  {
+    group: "Études & diagnostics",
+    items: [
+      {
+        title: "État des lieux sur les besoins d'accompagnement des femmes entrepreneures dans le secteur industriel",
+        client: "GIZ Algérie · Ministère de l'Industrie · 2024-2025",
+        body: "Cartographie des segments de femmes entrepreneures, analyse des motivations, obstacles et besoins spécifiques, identification des lacunes dans les dispositifs existants. Recommandations différenciées par segment.",
+      },
+      {
+        title: "Étude sur les effets psychosociaux de la violence numérique contre les femmes en Algérie",
+        client: "Programme S@lamat · The SecDev Foundation · 2021-2022",
+        body: "Analyse contextuelle, identification des formes de violence numérique et de leurs effets psychologiques et sociaux sur les femmes et leur rapport au numérique.",
+      },
+      {
+        title: "Profil pays — Approche égalité · Algérie",
+        client: "Délégation de l'Union Européenne · 2021",
+        body: "Synthèse socio-économique sur la condition des femmes, les stratégies gouvernementales et les cadres légaux.",
+      },
+    ],
+  },
+  {
+    group: "Évaluations",
+    items: [
+      {
+        title: "Évaluation finale · Projet jardins familiaux durables",
+        client: "CERAI · 2025",
+        body: "Évaluation externe finale d'un projet d'amélioration de la sécurité alimentaire via des jardins familiaux agro-écologiques gérés par des femmes dans les camps sahraouis.",
+      },
+      {
+        title: "Évaluation finale · Projet de distribution alimentaire · Camps sahraouis",
+        client: "Cruz Roja Española · 2023",
+        body: "Évaluation externe d'un projet d'aide alimentaire dans les camps de réfugiés sahraouis",
+      },
+    ],
+  },
+  {
+    group: "Accompagnement & stratégie",
+    items: [
+      {
+        title: "Intégration de l'approche égalité dans deux programmes de coopération bilatérale",
+        client: "Délégation UE Algérie · 2022",
+        body: "Appui à l'intégration de l'approche dans la logique d'intervention, le cadre logique et les matrices d'indicateurs de deux programmes UE — secteurs climat et agribusiness.",
+      },
+      {
+        title: "Mise en œuvre des projets NISSA et ECLAT-DZ",
+        client: "SCAC · Ambassade de France en Algérie · 2022-2025",
+        body: "Conception et mise en œuvre de deux programmes d'accompagnement dédiés aux porteuses de projets et aux femmes entrepreneures.",
+      },
+    ],
+  },
+  {
+    group: "Formations",
+    items: [
+      {
+        title: "Conception d'un module de sensibilisation et d'information à l'entrepreneuriat des femmes et à l'économie verte",
+        client: "GIZ Algérie · En cours · 2025-2026",
+        body: "Conception et animation d'un dispositif de sensibilisation destiné à des publics cibles spécifiques, visant à favoriser une acceptation positive du rôle des femmes dans le secteur entrepreneurial et l'économie verte.",
+      },
+      {
+        title: "Formation « Approche égalité et développement » · Algérie",
+        client: "GIZ Algérie · 2023-2024",
+        body: "Conception et animation de sessions de formation sur l'intégration de l'approche égalité dans les projets de développement, et élaboration de la boîte à outils pédagogique pour en permettre la réplication.",
+      },
+      {
+        title: "Ateliers de formation · Gestion des conflits et communication assertive",
+        client: "Délégation UE Algérie · 2023",
+        body: "Animation de 16 ateliers de formation pour l'ensemble du personnel de la Délégation.",
+      },
+      {
+        title: "Formation aux Intelligences Collectives et Citoyennes",
+        client: "Friedrich-Ebert-Stiftung · 2021-2024",
+        body: "Animation de plusieurs sessions dans le cadre du projet RAJE.",
+      },
+    ],
+  },
+];
+
 export default function AnalyserPage() {
   return (
     <>
@@ -21,7 +100,7 @@ export default function AnalyserPage() {
             <em>avant d&apos;agir.</em>
           </>
         }
-        lead="Les décisions stratégiques s'appuient sur des données fiables. Nous produisons les études, les diagnostics et les analyses qui éclairent vos choix sur les terrains nord-africains — où la nuance contextuelle reste, selon nous, la première forme d'expertise."
+        lead="Les décisions stratégiques s'appuient sur des données fiables. Nous produisons les études, les diagnostics et les analyses qui éclairent vos choix — où la nuance contextuelle reste, selon nous, la première forme d'expertise."
         ctaLabel="Discuter d'une mission"
         ctaHref="/#contact"
       />
@@ -30,7 +109,7 @@ export default function AnalyserPage() {
         <div className="section-head">
           <div>
             <p className="eyebrow reveal"><span className="dot"></span> Notre approche</p>
-            <h2 className="reveal d1">Une méthodologie <em>explicite<br />et défendable.</em></h2>
+            <h2 className="reveal d1">Une méthodologie <em>explicite<br />et argumentée.</em></h2>
           </div>
           <p className="reveal d2">
             Chaque étude répond à une question décisionnelle précise. Nous explicitons nos protocoles
@@ -42,32 +121,32 @@ export default function AnalyserPage() {
           <div className="value-card reveal d1">
             <div className="num">01.</div>
             <h3>Cadrage rigoureux</h3>
-            <p>Nous transformons votre besoin opérationnel en questions de recherche claires, avec hypothèses, indicateurs et critères de validation explicités en amont.</p>
+            <p>Nous transformons votre besoin en questions de recherche claires, avec hypothèses, indicateurs et critères de validation explicités en amont.</p>
           </div>
           <div className="value-card reveal d2">
             <div className="num">02.</div>
             <h3>Méthodes mixtes</h3>
-            <p>Quantitatif et qualitatif sont articulés selon la question, pas par préférence. Triangulation systématique entre sources documentaires, entretiens et observations.</p>
+            <p>Quantitatif et qualitatif sont articulés selon la question posée. Triangulation systématique entre sources documentaires, entretiens et observations.</p>
           </div>
           <div className="value-card reveal d3">
             <div className="num">03.</div>
             <h3>Échantillonnage défendable</h3>
-            <p>Plans d&apos;échantillonnage justifiés, biais explicités, taille calculée. Pas de chiffres présentés comme représentatifs quand ils ne le sont pas.</p>
+            <p>Plans d&apos;échantillonnage justifiés, biais explicités, taille calculée, profils spécifiés. Pas de chiffres présentés comme représentatifs quand ils ne le sont pas.</p>
           </div>
           <div className="value-card reveal d1">
             <div className="num">04.</div>
-            <h3>Lecture des terrains</h3>
-            <p>Notre ancrage local nous permet d&apos;accéder à des acteurs et des informations que les bureaux internationaux peinent à obtenir, et de les interpréter correctement.</p>
+            <h3>Lecture des contextes</h3>
+            <p>Notre ancrage nous permet d&apos;accéder à des acteurs et des informations que d&apos;autres peinent à obtenir, et de les interpréter avec nuance.</p>
           </div>
           <div className="value-card reveal d2">
             <div className="num">05.</div>
             <h3>Inclusion intégrée</h3>
-            <p>L&apos;analyse genre et inclusion est intégrée à la méthodologie de base — pas une question additionnelle posée à la fin du questionnaire.</p>
+            <p>L&apos;analyse des dynamiques sociales et des inégalités est intégrée dans le cœur de notre démarche et méthodologie — ce n&apos;est pas une question additionnelle.</p>
           </div>
           <div className="value-card reveal d3">
             <div className="num">06.</div>
             <h3>Livrables exploitables</h3>
-            <p>Nos rapports sont écrits pour être lus par des décideurs. Synthèse exécutive, recommandations hiérarchisées, annexes techniques séparées.</p>
+            <p>Nos rapports sont écrits pour être lus, compris et utilisables par tous. Analyse, recommandations et ressources documentaires.</p>
           </div>
         </div>
       </section>
@@ -79,7 +158,7 @@ export default function AnalyserPage() {
             <h2 className="reveal d1">Ce que nous <em>livrons<br />concrètement.</em></h2>
           </div>
           <p className="reveal d2">
-            Chaque mission donne lieu à des livrables structurés, défendables, directement
+            Chaque mission donne lieu à des livrables structurés, argumentés, directement
             utilisables par vos équipes.
           </p>
         </div>
@@ -87,13 +166,12 @@ export default function AnalyserPage() {
         <div className="prestations-grid">
           <article className="prestation-card reveal d1">
             <div className="prestation-meta">
-              <span><span className="marker"></span>6 à 12 semaines</span>
-              <span>FR / AR</span>
+              <span>FR / AR / ENG</span>
             </div>
             <h3>Étude de référence (baseline)</h3>
             <p>Cartographie du contexte avant intervention : acteurs, indicateurs, dynamiques. Sert de point de comparaison pour mesurer l&apos;évolution du programme.</p>
             <ul className="prestation-modules">
-              <li>Cadrage et revue documentaire</li>
+              <li>Cadrage avec le commanditaire et revue documentaire</li>
               <li>Collecte mixte sur le terrain</li>
               <li>Analyse et triangulation</li>
               <li>Rapport de référence + base de données</li>
@@ -103,11 +181,10 @@ export default function AnalyserPage() {
 
           <article className="prestation-card reveal d2">
             <div className="prestation-meta">
-              <span><span className="marker"></span>4 à 8 semaines</span>
-              <span>FR / AR</span>
+              <span>FR / AR / ENG</span>
             </div>
             <h3>Diagnostic sectoriel ou thématique</h3>
-            <p>État des lieux structuré sur un secteur, une politique publique ou un enjeu. Identifie leviers, blocages et acteurs clés.</p>
+            <p>État des lieux structuré sur un secteur, un marché, une politique publique ou un enjeu organisationnel. Identifie leviers, blocages et acteurs clés.</p>
             <ul className="prestation-modules">
               <li>Revue des dispositifs existants</li>
               <li>Entretiens avec parties prenantes</li>
@@ -139,12 +216,11 @@ export default function AnalyserPage() {
               <span>FR / AR</span>
             </div>
             <h3>Note d&apos;analyse rapide</h3>
-            <p>Réponse structurée à une question décisionnelle urgente, basée sur sources documentaires et entretiens ciblés. Format court, exploitable immédiatement.</p>
+            <p>Réponse structurée à une question décisionnelle urgente, basée sur des sources documentaires et des entretiens ciblés. Format court, exploitable immédiatement.</p>
             <ul className="prestation-modules">
               <li>Cadrage avec le commanditaire</li>
               <li>Synthèse documentaire</li>
               <li>Entretiens-clés</li>
-              <li>Note de 15 à 25 pages</li>
             </ul>
             <Link href="/#contact" className="prestation-link">Demander un devis <span className="arrow">→</span></Link>
           </article>
@@ -157,39 +233,33 @@ export default function AnalyserPage() {
             <div>
               <p className="eyebrow reveal"><span className="dot"></span> Références Analyser</p>
               <h2 className="reveal d1" style={{ fontFamily: "var(--font-serif)", fontWeight: 300, fontSize: "clamp(40px,4.6vw,72px)", lineHeight: 1, letterSpacing: "-0.025em", marginTop: "20px" }}>
-                Quelques missions <em style={{ fontStyle: "italic", color: "var(--saffron)" }}>analyser.</em>
+                Quelques <em style={{ fontStyle: "italic", color: "var(--saffron)" }}>missions.</em>
               </h2>
             </div>
             <Link href="/references" className="all-link reveal d2">Toutes les références →</Link>
           </div>
 
-          <div className="refs-grid">
-            <article className="ref-card reveal d1">
-              <span className="ref-tag">Analyser</span>
-              <div className="ref-client">Union Européenne · Algérie</div>
-              <h3>Étude sur l&apos;égalité de genre dans l&apos;accès au marché de l&apos;emploi</h3>
-              <p className="ref-result"><strong>Résultat</strong>Base de données utilisée pour orienter la politique de coopération UE-Algérie sur 3 ans.</p>
-            </article>
-            <article className="ref-card reveal d2">
-              <span className="ref-tag">Analyser</span>
-              <div className="ref-client">SCAC · Ambassade de France</div>
-              <h3>Diagnostic des dispositifs d&apos;appui à la jeunesse universitaire algérienne</h3>
-              <p className="ref-result"><strong>Résultat</strong>Cartographie de 18 acteurs et 7 axes prioritaires pour le prochain cycle de coopération.</p>
-            </article>
-            <article className="ref-card reveal d3">
-              <span className="ref-tag">Analyser</span>
-              <div className="ref-client">Ministère de la Formation Professionnelle</div>
-              <h3>Étude sur l&apos;adéquation formation-emploi dans le secteur des services</h3>
-              <p className="ref-result"><strong>Résultat</strong>1 200 entreprises et 800 stagiaires interrogés. Recommandations intégrées au plan sectoriel 2025.</p>
-            </article>
-          </div>
+          {refGroups.map((g) => (
+            <div key={g.group} className="ref-group">
+              <h3 className="ref-group-title reveal">{g.group}</h3>
+              <div className="refs-grid">
+                {g.items.map((it, i) => (
+                  <article key={it.title} className={`ref-card reveal d${(i % 3) + 1}`}>
+                    <div className="ref-client">{it.client}</div>
+                    <h3>{it.title}</h3>
+                    <p className="ref-note">{it.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       <Cta
         eyebrow="Démarrer une étude"
         title={<>Une question, un terrain,<br /><em>une étude à mener&nbsp;?</em></>}
-        lead="Décrivez-nous votre besoin. Nous reviendrons sous 48 heures avec une première lecture et, si pertinent, une proposition de cadrage."
+        lead="Décrivez-nous votre besoin. Nous reviendrons vers vous avec une proposition concrète et adaptée."
       />
     </>
   );

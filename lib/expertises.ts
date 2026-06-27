@@ -18,7 +18,7 @@ export const expertisesParent = {
   title: "Trois portes,\nune même exigence.",
   // Intro qui ouvre sur le problème client — pas sur Astarté.
   intro:
-    "Une décision à éclairer, un programme à évaluer, une équipe à outiller : chaque enjeu appelle une réponse différente. Nos trois expertises s'articulent selon la phase de votre projet — vous entrez par la porte qui correspond à votre besoin, et nous mobilisons les autres quand c'est utile.",
+    "Une décision à éclairer, un projet à évaluer, une équipe à renforcer : chaque enjeu appelle une réponse différente. Nos expertises s'articulent selon la phase de votre projet — vous entrez par la porte qui correspond à votre besoin, et nous mobilisons les autres quand c'est utile.",
 };
 
 // Order of this array = display order on the parent page and in navigation.
@@ -28,7 +28,7 @@ export const expertises: Expertise[] = [
     index: "01",
     title: "Analyser",
     accroche:
-      "Comprendre avant d'agir : études, diagnostics et analyses qui éclairent vos décisions sur les terrains nord-africains.",
+      "Comprendre avant d'agir : études, diagnostics et analyses qui éclairent vos décisions.",
     image: "/assets/expertise-analyser.jpg",
     imageAlt: "Recherche documentaire, cartes et instruments — pilier Analyser",
   },
@@ -37,7 +37,7 @@ export const expertises: Expertise[] = [
     index: "02",
     title: "Accompagner",
     accroche:
-      "Mesurer ce qui compte : évaluations, stratégies et pilotage qui produisent des décisions — pas seulement des rapports.",
+      "Mesurer ce qui compte : évaluations, stratégies et pilotage qui appuient des décisions.",
     image: "/assets/expertise-accompagner.jpg",
     imageAlt: "Deux praticiennes franchissant un pont au crépuscule — pilier Accompagner",
   },
@@ -46,7 +46,7 @@ export const expertises: Expertise[] = [
     index: "03",
     title: "Développer",
     accroche:
-      "Transmettre ce que nous savons faire : formations et renforcement de capacités ancrés dans vos dossiers réels.",
+      "Renforcer ce que vos équipes peuvent faire : formations et montée en compétences ancrées dans vos contextes et réalités.",
     image: "/assets/expertise-developper.jpg",
     imageAlt: "Amphithéâtre en spirale et atome — pilier Développer",
   },
