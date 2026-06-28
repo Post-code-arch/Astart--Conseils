@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
+import FormationsIndex from "@/components/FormationsIndex";
 import { formations } from "@/lib/formations";
 
 export const metadata: Metadata = {
@@ -44,46 +45,27 @@ export default function FormationsPage() {
           <p className="reveal d2">Format intensif, animation en binôme, supports bilingues, suivi à 3 mois inclus.</p>
         </div>
 
-        <div className="prestations-grid">
-          {catalogue.map((f, i) => (
-            <article key={f.title} className={`prestation-card reveal d${(i % 3) + 1}`}>
-              <div className="prestation-meta">
-                <span><span className="marker"></span>{f.duree}</span>
-                <span>{f.langue}{f.effectif ? ` · ${f.effectif}` : ""}</span>
-              </div>
-              <h3>{f.title}</h3>
-              <p>{f.accroche}</p>
-              <ul className="prestation-modules">
-                {f.modules.map((m) => (
+        <FormationsIndex items={catalogue} />
+
+        {surMesure && (
+          <div className="fx-dedie reveal">
+            <div className="fx-dedie-head">
+              <span className="fx-dedie-tag">Sur mesure · {surMesure.langue}</span>
+              <h3>{surMesure.title}</h3>
+              <p>{surMesure.accroche}</p>
+            </div>
+            <div className="fx-dedie-body">
+              <ul className="fx-dedie-modules">
+                {surMesure.modules.map((m) => (
                   <li key={m}>{m}</li>
                 ))}
               </ul>
-              <Link href="/#contact" className="prestation-link">Programmer <span className="arrow">→</span></Link>
-            </article>
-          ))}
-
-          {surMesure && (
-            <article
-              className="prestation-card reveal d2"
-              style={{ background: "var(--aubergine)", color: "var(--cream)", borderColor: "var(--aubergine)" }}
-            >
-              <div className="prestation-meta" style={{ color: "var(--cream-muted)" }}>
-                <span><span className="marker"></span>{surMesure.duree}</span>
-                <span>{surMesure.langue}</span>
-              </div>
-              <h3 style={{ color: "var(--saffron)" }}>{surMesure.title}</h3>
-              <p style={{ color: "var(--cream-muted)" }}>{surMesure.accroche}</p>
-              <ul className="prestation-modules" style={{ borderTopColor: "var(--line-dark)" }}>
-                {surMesure.modules.map((m) => (
-                  <li key={m} style={{ color: "var(--cream)" }}>{m}</li>
-                ))}
-              </ul>
-              <Link href="/#contact" className="prestation-link" style={{ color: "var(--saffron)" }}>
+              <Link href="/#contact" className="btn-pill primary">
                 Construire un programme <span className="arrow">→</span>
               </Link>
-            </article>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <section className="section tone-sand">
