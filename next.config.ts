@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Sanity Studio ships untranspiled ESM; let Next compile it.
+  transpilePackages: ["sanity", "@sanity/vision"],
   async redirects() {
     // statusCode 301 (literal) rather than `permanent: true` which would emit 308.
     return [

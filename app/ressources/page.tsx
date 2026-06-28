@@ -1,56 +1,13 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
+import { getPublications } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Ressources — Astarté Conseils",
 };
 
-const publications = [
-  {
-    year: "2025",
-    title: "L'épreuve du temps long — sur le rythme du conseil",
-    body: "Conférence à l'École nationale d'administration de Tunis. Sur la compression du temps dans les missions de conseil et ce qu'elle coûte à la qualité.",
-    tag: "Essai",
-    reveal: "reveal d1",
-  },
-  {
-    year: "2024",
-    title: "Lire un terrain — note méthodologique",
-    body: "Pourquoi l'observation directe reste irremplaçable. Sur la discipline du carnet de terrain et le silence comme outil.",
-    tag: "Note",
-    reveal: "reveal d2",
-  },
-  {
-    year: "2024",
-    title: "Évaluation contributive en contexte fragile",
-    body: "Quand l'attribution stricte est impossible : documenter la contribution avec rigueur. Cas pratique d'un programme régional.",
-    tag: "Méthode",
-    reveal: "reveal d3",
-  },
-  {
-    year: "2023",
-    title: "Genre et politiques publiques en Algérie — un état des lieux",
-    body: "Synthèse de cinq ans de missions sur les dispositifs publics d'inclusion. Tribune publiée dans la revue Maghreb-Machrek.",
-    tag: "Tribune",
-    reveal: "reveal d1",
-  },
-  {
-    year: "2023",
-    title: "Pourquoi nous refusons certaines missions",
-    body: "Sur la déontologie du conseil et les raisons qui justifient un refus. Trois cas concrets.",
-    tag: "Essai",
-    reveal: "reveal d2",
-  },
-  {
-    year: "2022",
-    title: "Penser le suivi-évaluation au-delà des indicateurs",
-    body: "Critique constructive des cadres logiques. Vers une approche qui articule indicateurs et apprentissage.",
-    tag: "Méthode",
-    reveal: "reveal d3",
-  },
-];
-
-export default function RessourcesPage() {
+export default async function RessourcesPage() {
+  const publications = await getPublications();
   return (
     <>
       <section className="page-hero gradient-misty">
@@ -107,7 +64,7 @@ export default function RessourcesPage() {
 
         <div className="pub-list">
           {publications.map((pub, i) => (
-            <a href="#" key={i} className={`pub-row ${pub.reveal}`}>
+            <a href={pub.href ?? "#"} key={i} className={`pub-row reveal d${(i % 3) + 1}`}>
               <span className="pub-year">{pub.year}</span>
               <div className="pub-content">
                 <h3>{pub.title}</h3>

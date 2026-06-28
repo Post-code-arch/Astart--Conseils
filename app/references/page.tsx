@@ -2,12 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import ReferencesFilter from "@/components/ReferencesFilter";
 import Cta from "@/components/Cta";
+import { getReferences } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Références — Astarté Conseils",
 };
 
-export default function ReferencesPage() {
+export default async function ReferencesPage() {
+  const references = await getReferences();
   return (
     <>
       <section className="page-hero gradient-ember">
@@ -42,7 +44,7 @@ export default function ReferencesPage() {
           <p className="reveal d2">Cliquez un pilier pour filtrer les missions correspondantes.</p>
         </div>
 
-        <ReferencesFilter />
+        <ReferencesFilter items={references} />
       </section>
 
       <section className="section tone-dark">

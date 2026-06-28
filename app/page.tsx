@@ -1,8 +1,10 @@
 import Hero from "@/components/Hero";
 import MethodSection from "@/components/MethodSection";
 import Cta from "@/components/Cta";
+import { getPartners } from "@/lib/content";
 
-export default function Home() {
+export default async function Home() {
+  const partners = await getPartners();
   return (
     <>
       <Hero />
@@ -46,15 +48,9 @@ export default function Home() {
         <div className="proof-clients">
           <p className="eyebrow"><span className="dot"></span> Partenaires</p>
           <div className="clients-grid">
-            <div className="client-pill">Délégation de l&apos;Union Européenne en Algérie</div>
-            <div className="client-pill">GIZ</div>
-            <div className="client-pill">Oxfam</div>
-            <div className="client-pill">SCAC</div>
-            <div className="client-pill">FES</div>
-            <div className="client-pill">Ministère de l&apos;Industrie</div>
-            <div className="client-pill">SECDEV Foundation</div>
-            <div className="client-pill">Croix Rouge Espagnole</div>
-            <div className="client-pill">CERAI</div>
+            {partners.map((p) => (
+              <div key={p.name} className="client-pill">{p.name}</div>
+            ))}
           </div>
         </div>
       </section>

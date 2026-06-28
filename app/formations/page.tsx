@@ -2,13 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
 import FormationsIndex from "@/components/FormationsIndex";
-import { formations } from "@/lib/formations";
+import { getFormations } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Formations — Astarté Conseils",
 };
 
-export default function FormationsPage() {
+export default async function FormationsPage() {
+  const formations = await getFormations();
   const catalogue = formations.filter((f) => f.kind === "catalogue");
   const surMesure = formations.find((f) => f.kind === "surMesure");
 

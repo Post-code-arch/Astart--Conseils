@@ -1,15 +1,17 @@
 import Link from "next/link";
+import { getSiteSettings } from "@/lib/content";
 
-export default function Footer() {
+export default async function Footer() {
+  const s = await getSiteSettings();
   return (
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
           <span className="footer-wm" role="img" aria-label="Astarté Conseils" />
           <p>
-            Bureau d&apos;études &amp; de Conseils — Algérie · Afrique du Nord · Sahel.
+            {s.tagline}.
             <br />
-            Fondé en 2021 à Alger.
+            {s.foundedLine}.
           </p>
         </div>
         <div className="footer-links">
@@ -49,15 +51,15 @@ export default function Footer() {
         <div className="footer-contact">
           <h6>Contact</h6>
           <p>
-            contact@astarte-conseils.com
+            {s.emails.map((email) => (
+              <span key={email}>
+                {email}
+                <br />
+              </span>
+            ))}
+            {s.phone}
             <br />
-            kessai@astarte-conseils.org
-            <br />
-            hamadouche@astarte-conseils.org
-            <br />
-            +213 553 47 45 97
-            <br />
-            25, Rue Rabah Bourbia, El Biar (près du balcon Saint Raphaël), Alger, Algérie
+            {s.address}
           </p>
         </div>
       </div>
