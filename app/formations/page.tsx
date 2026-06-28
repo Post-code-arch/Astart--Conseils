@@ -22,7 +22,7 @@ export default async function FormationsPage() {
             <p className="eyebrow reveal"><span className="dot"></span> Renforcement de capacités · Programmes sur mesure</p>
             <h1 className="page-hero-title reveal d1">
               Des formations qui<br />
-              <em>laissent des traces.</em>
+              <em>laissent un impact.</em>
             </h1>
             <div className="page-hero-bottom">
               <p className="page-hero-lead reveal d2">
