@@ -30,10 +30,6 @@ export default function Home() {
             <div className="label">années d&apos;expertise<br />des fondatrices</div>
           </div>
           <div className="proof-stat">
-            <div className="num count-up">1</div>
-            <div className="label">pool d&apos;expertes<br />et experts</div>
-          </div>
-          <div className="proof-stat">
             <div className="num count-up">19<em>+</em></div>
             <div className="label">missions<br />conduites</div>
           </div>
