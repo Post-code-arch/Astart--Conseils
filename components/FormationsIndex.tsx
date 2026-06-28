@@ -1,13 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import type { Formation } from "@/lib/formations";
 
-// Index éditorial extensible : chaque formation est une ligne pleine largeur
-// (numéro + titre + méta). Au clic, la ligne se déplie et révèle l'accroche
-// et les modules. Un seul panneau ouvert à la fois.
+// Accent warm-earth par ligne (cycle) — donne de la couleur et du rythme
+// sans inventer de catégories hors du copy validé.
+const ACCENTS = [
+  "#E8853A", // orange
+  "#B8533A", // rust
+  "#B8924A", // gold
+  "#A23B2E", // terracotta
+  "#C76A2E", // amber
+  "#8A5A2B", // bronze
+  "#9E3B47", // plum-red
+  "#6E4A1F", // umber
+];
+
+// Index éditorial extensible, version enrichie : accent coloré par ligne,
+// flood au survol, grand numéro, panneau ouvert riche.
 export default function FormationsIndex({ items }: { items: Formation[] }) {
   const [open, setOpen] = useState<number | null>(0);
 
@@ -16,8 +29,13 @@ export default function FormationsIndex({ items }: { items: Formation[] }) {
       {items.map((f, i) => {
         const isOpen = open === i;
         const panelId = `fx-panel-${i}`;
+        const accent = ACCENTS[i % ACCENTS.length];
         return (
-          <div key={f.title} className={`fx-row${isOpen ? " open" : ""}`}>
+          <div
+            key={f.title}
+            className={`fx-row${isOpen ? " open" : ""}`}
+            style={{ "--fx-accent": accent } as CSSProperties}
+          >
             <button
               type="button"
               className="fx-row-head"
@@ -34,7 +52,11 @@ export default function FormationsIndex({ items }: { items: Formation[] }) {
                   {f.effectif && <span>{f.effectif}</span>}
                 </span>
               </span>
-              <span className="fx-chevron" aria-hidden="true">▾</span>
+              <span className="fx-chevron" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </span>
             </button>
 
             <AnimatePresence initial={false}>
@@ -48,7 +70,13 @@ export default function FormationsIndex({ items }: { items: Formation[] }) {
                   transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div className="fx-panel-inner">
-                    <p className="fx-accroche">{f.accroche}</p>
+                    <span className="fx-ghost" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                    <div className="fx-panel-lead">
+                      <p className="fx-accroche">{f.accroche}</p>
+                      <Link href="/#contact" className="fx-cta">
+                        Programmer cette session <span className="arrow">→</span>
+                      </Link>
+                    </div>
                     <div className="fx-modules-wrap">
                       <span className="fx-modules-label">Au programme</span>
                       <ul className="fx-modules">
@@ -56,9 +84,6 @@ export default function FormationsIndex({ items }: { items: Formation[] }) {
                           <li key={m}>{m}</li>
                         ))}
                       </ul>
-                      <Link href="/#contact" className="fx-cta">
-                        Programmer cette session <span className="arrow">→</span>
-                      </Link>
                     </div>
                   </div>
                 </motion.div>
