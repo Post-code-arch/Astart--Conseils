@@ -45,6 +45,7 @@ export default function Nav() {
 
         {/* Desktop horizontal navigation */}
         <nav className="nav-links" aria-label="Navigation principale">
+          <Link href="/formations" className={cls("formations")}>Formations</Link>
           <Link href="/a-propos" className={cls("a-propos")}>À Propos</Link>
           <Link href="/references" className={cls("references")}>Références</Link>
           <Link href="/ressources" className={cls("ressources")}>Ressources</Link>

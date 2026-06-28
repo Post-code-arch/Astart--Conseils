@@ -8,7 +8,8 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   { key: "home", label: "Accueil", num: "— 01", href: "/" },
   { key: "expertises", label: "Expertises", num: "— 02", href: "/expertises" },
-  { key: "references", label: "Références", num: "— 03", href: "/references" },
-  { key: "a-propos", label: "À propos", num: "— 04", href: "/a-propos" },
-  { key: "ressources", label: "Ressources", num: "— 05", href: "/ressources" },
+  { key: "formations", label: "Formations", num: "— 03", href: "/formations" },
+  { key: "references", label: "Références", num: "— 04", href: "/references" },
+  { key: "a-propos", label: "À propos", num: "— 05", href: "/a-propos" },
+  { key: "ressources", label: "Ressources", num: "— 06", href: "/ressources" },
 ];
