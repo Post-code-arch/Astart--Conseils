@@ -21,6 +21,7 @@ const spectral = Spectral({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://astarte-conseils.org"),
   title: "Astarté Conseils — Le terrain comme doctrine",
   description:
     "Cabinet de conseil & d'études — Maghreb · Sahel. Analyser, accompagner, développer.",
