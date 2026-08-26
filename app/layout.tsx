@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Spectral } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import RevealRunner from "@/components/RevealRunner";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -41,10 +38,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${outfit.variable} ${spectral.variable}`}>
       <body>
-        <Nav />
         {children}
-        <Footer />
-        <RevealRunner />
       </body>
     </html>
   );

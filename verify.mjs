@@ -1,0 +1,11 @@
+import { chromium } from 'playwright-core';
+const b = await chromium.launch({ executablePath:'/opt/pw-browsers/chromium-1194/chrome-linux/chrome', args:['--no-sandbox'] });
+const p = await b.newPage({ viewport:{width:1400,height:900}, deviceScaleFactor:1 });
+await p.goto('http://localhost:4231/', { waitUntil:'load' });
+await p.addStyleTag({content:'.reveal{opacity:1!important;transform:none!important}'});
+await p.waitForTimeout(500);
+await p.screenshot({ path:'/tmp/qa/_home_after.png' });
+await p.goto('http://localhost:4231/admin/login', { waitUntil:'load' });
+await p.waitForTimeout(400);
+await p.screenshot({ path:'/tmp/qa/_login.png' });
+await b.close(); console.log('ok');

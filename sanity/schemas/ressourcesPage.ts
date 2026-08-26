@@ -1,0 +1,30 @@
+import { defineType, defineField } from "sanity";
+
+export const ressourcesPage = defineType({
+  name: "ressourcesPage",
+  title: "Ressources (page)",
+  type: "document",
+  fields: [
+    defineField({ name: "heroEyebrow", title: "Surtitre hero", type: "string" }),
+    defineField({ name: "heroTitle", title: "Titre hero", type: "string" }),
+    defineField({ name: "heroTitleEm", title: "Titre hero — italique", type: "string" }),
+    defineField({ name: "heroLead", title: "Chapô hero", type: "text", rows: 3 }),
+    defineField({ name: "cahierEyebrow", title: "Surtitre cahier", type: "string" }),
+    defineField({ name: "cahierEdition", title: "Mention édition", type: "string" }),
+    defineField({ name: "cahierTitle", title: "Titre cahier", type: "string" }),
+    defineField({ name: "cahierTitleEm", title: "Titre cahier — italique", type: "string" }),
+    defineField({ name: "cahierText", title: "Description cahier", type: "text", rows: 4 }),
+    defineField({ name: "cahierCover", title: "Image couverture cahier", type: "image", options: { hotspot: true } }),
+    defineField({ name: "cahierMeta", title: "Méta cahier (pages · format · langue)", type: "string" }),
+    defineField({ name: "pubEyebrow", title: "Surtitre publications", type: "string" }),
+    defineField({ name: "pubTitle", title: "Titre publications", type: "string" }),
+    defineField({ name: "pubTitleEm", title: "Titre publications — italique", type: "string" }),
+    defineField({ name: "pubLead", title: "Texte publications", type: "text", rows: 2 }),
+    defineField({ name: "ctaEyebrow", title: "Surtitre CTA", type: "string" }),
+    defineField({ name: "ctaTitle", title: "Titre CTA", type: "string" }),
+    defineField({ name: "ctaTitleEm", title: "Titre CTA — italique", type: "string" }),
+    defineField({ name: "ctaLead", title: "Texte CTA", type: "text", rows: 2 }),
+    defineField({ name: "ctaLabel", title: "Libellé bouton CTA", type: "string" }),
+  ],
+  preview: { prepare: () => ({ title: "Ressources (page)" }) },
+});
