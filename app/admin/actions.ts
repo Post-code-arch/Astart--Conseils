@@ -12,16 +12,7 @@ type Result = { ok: boolean; message: string };
 export async function login(_prev: unknown, formData: FormData): Promise<Result> {
   const password = String(formData.get("password") ?? "");
   const expected = process.env.ADMIN_PASSWORD;
-  if (!expected) {
-    // Diagnostic temporaire (noms seulement, aucune valeur secrète).
-    const keys = Object.keys(process.env);
-    const related = keys.filter((k) => /ADMIN|SANITY|PASSWORD|TOKEN/i.test(k));
-    const env = process.env.VERCEL_ENV ?? "?";
-    const repo = `${process.env.VERCEL_GIT_REPO_OWNER ?? "?"}/${process.env.VERCEL_GIT_REPO_SLUG ?? "?"}`;
-    const url = process.env.VERCEL_URL ?? "?";
-    const seen = `env=${env} · repo=${repo} · url=${url} · count=${keys.length} · related=[${related.join(", ") || "aucune"}]`;
-    return { ok: false, message: `Configuration manquante (ADMIN_PASSWORD). [diag3] ${seen}` };
-  }
+  if (!expected) return { ok: false, message: "Configuration manquante (ADMIN_PASSWORD)." };
   if (password !== expected) return { ok: false, message: "Mot de passe incorrect." };
   const { value, maxAge } = await createSession(expected);
   (await cookies()).set(SESSION_COOKIE, value, {
