@@ -16,8 +16,11 @@ export async function login(_prev: unknown, formData: FormData): Promise<Result>
     // Diagnostic temporaire (noms seulement, aucune valeur secrète).
     const keys = Object.keys(process.env);
     const related = keys.filter((k) => /ADMIN|SANITY|PASSWORD|TOKEN/i.test(k));
-    const seen = `count=${keys.length} · hasVERCEL=${keys.some((k) => k.startsWith("VERCEL")) ? "oui" : "non"} · related=[${related.join(", ") || "aucune"}]`;
-    return { ok: false, message: `Configuration manquante (ADMIN_PASSWORD). [diag2] ${seen}` };
+    const env = process.env.VERCEL_ENV ?? "?";
+    const repo = `${process.env.VERCEL_GIT_REPO_OWNER ?? "?"}/${process.env.VERCEL_GIT_REPO_SLUG ?? "?"}`;
+    const url = process.env.VERCEL_URL ?? "?";
+    const seen = `env=${env} · repo=${repo} · url=${url} · count=${keys.length} · related=[${related.join(", ") || "aucune"}]`;
+    return { ok: false, message: `Configuration manquante (ADMIN_PASSWORD). [diag3] ${seen}` };
   }
   if (password !== expected) return { ok: false, message: "Mot de passe incorrect." };
   const { value, maxAge } = await createSession(expected);
