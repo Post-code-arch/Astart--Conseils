@@ -1,10 +1,10 @@
 import Hero from "@/components/Hero";
 import MethodSection from "@/components/MethodSection";
 import Cta from "@/components/Cta";
-import { getPartners } from "@/lib/content";
+import { getPartners, getPillars } from "@/lib/content";
 
 export default async function Home() {
-  const partners = await getPartners();
+  const [partners, pillars] = await Promise.all([getPartners(), getPillars()]);
   return (
     <>
       <Hero />
@@ -23,7 +23,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <MethodSection />
+      <MethodSection pillars={pillars} />
 
       <section className="proof">
         <div className="proof-stats">

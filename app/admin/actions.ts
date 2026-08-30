@@ -48,6 +48,7 @@ export async function saveFields(
   docId: string,
   values: Record<string, unknown>,
   required: string[] = [],
+  docType: string = docId,
 ): Promise<Result> {
   try {
     for (const path of required) {
@@ -59,7 +60,7 @@ export async function saveFields(
     const client = getWriteClient();
     await client
       .transaction()
-      .createIfNotExists({ _id: docId, _type: docId })
+      .createIfNotExists({ _id: docId, _type: docType })
       .patch(docId, (p) => p.set(values))
       .commit();
     return { ok: true, message: "Modifications enregistrées." };
@@ -68,7 +69,7 @@ export async function saveFields(
   }
 }
 
-export async function uploadImage(docId: string, path: string, formData: FormData): Promise<Result & { url?: string }> {
+export async function uploadImage(docId: string, path: string, formData: FormData, docType: string = docId): Promise<Result & { url?: string }> {
   try {
     const file = formData.get("file") as File | null;
     if (!file || file.size === 0) return { ok: false, message: "Aucun fichier sélectionné." };
@@ -77,7 +78,7 @@ export async function uploadImage(docId: string, path: string, formData: FormDat
     const asset = await client.assets.upload("image", buffer, { filename: file.name });
     await client
       .transaction()
-      .createIfNotExists({ _id: docId, _type: docId })
+      .createIfNotExists({ _id: docId, _type: docType })
       .patch(docId, (p) => p.set({ [path]: { _type: "image", asset: { _type: "reference", _ref: asset._id } } }))
       .commit();
     return { ok: true, message: "Image mise à jour.", url: asset.url };

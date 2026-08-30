@@ -6,6 +6,8 @@ import { partners as partnersFallback, type Partner } from "./partners";
 import { publications as pubsFallback, type Publication } from "./publications";
 import { references as refsFallback, type Reference } from "./references";
 import { formations as formationsFallback, type Formation } from "./formations";
+import { homePage as homeFallback, type HomePage } from "./pages";
+import { pillars as pillarsFallback, type Pillar } from "./pillars";
 
 // Mise en cache ISR : le contenu publié est revalidé périodiquement.
 const fetchOpts = { next: { revalidate: 60, tags: ["content"] } };
@@ -56,4 +58,28 @@ export async function getFormations(): Promise<Formation[]> {
     `*[_type=="formation"]|order(order asc){ title, kind, accroche, duree, langue, effectif, modules }`,
     formationsFallback,
   );
+}
+
+export async function getHomePage(): Promise<HomePage> {
+  return safeFetch<HomePage>(
+    `*[_type=="homePage"][0]{ heroEyebrow, heroTitle, heroTitleEm, heroLead, "heroImageUrl": heroImage.asset->url }`,
+    homeFallback,
+  );
+}
+
+export async function getPillars(): Promise<Pillar[]> {
+  return safeFetch<Pillar[]>(
+    `*[_type=="pillar"]|order(order asc){
+      "slug": slug.current, index, name,
+      homeEyebrow, homeTitle, homeTitleEm, homeBody, homeList, accroche,
+      heroEyebrow, heroTitle, heroTitleEm, heroLead, heroCtaLabel,
+      "heroImageUrl": heroImage.asset->url
+    }`,
+    pillarsFallback,
+  );
+}
+
+export async function getPillar(slug: string): Promise<Pillar | undefined> {
+  const all = await getPillars();
+  return all.find((p) => p.slug === slug);
 }

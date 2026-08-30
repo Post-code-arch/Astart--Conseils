@@ -20,6 +20,7 @@ export default function GroupForm({
   const [values, setValues] = useState<Record<string, string>>(initial);
   const [status, setStatus] = useState<Status>(null);
   const [pending, startTransition] = useTransition();
+  const docType = fields[0]?.docType ?? docId;
 
   const set = (path: string, v: string) => setValues((s) => ({ ...s, [path]: v }));
 
@@ -35,7 +36,7 @@ export default function GroupForm({
           ? (values[f.path] ?? "").split("\n").map((s) => s.trim()).filter(Boolean)
           : (values[f.path] ?? "");
       }
-      setStatus(await saveFields(docId, payload, required));
+      setStatus(await saveFields(docId, payload, required, docType));
     });
   };
 
@@ -47,7 +48,7 @@ export default function GroupForm({
             {f.label} {f.required && <span className="req">*</span>}
           </label>
           {f.type === "image" ? (
-            <ImageField docId={docId} path={f.path} initialUrl={imageUrls[f.path]} />
+            <ImageField docId={docId} docType={docType} path={f.path} initialUrl={imageUrls[f.path]} />
           ) : f.type === "textarea" || f.type === "richtext" ? (
             <textarea id={f.id} value={values[f.path] ?? ""} onChange={(e) => set(f.path, e.target.value)} rows={4} />
           ) : f.type === "list" ? (
@@ -68,7 +69,7 @@ export default function GroupForm({
   );
 }
 
-function ImageField({ docId, path, initialUrl }: { docId: string; path: string; initialUrl?: string }) {
+function ImageField({ docId, docType, path, initialUrl }: { docId: string; docType: string; path: string; initialUrl?: string }) {
   const [url, setUrl] = useState(initialUrl ?? "");
   const [status, setStatus] = useState<Status>(null);
   const [pending, startTransition] = useTransition();
@@ -80,7 +81,7 @@ function ImageField({ docId, path, initialUrl }: { docId: string; path: string; 
     startTransition(async () => {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await uploadImage(docId, path, fd);
+      const res = await uploadImage(docId, path, fd, docType);
       setStatus(res);
       if (res.ok && res.url) setUrl(res.url);
     });

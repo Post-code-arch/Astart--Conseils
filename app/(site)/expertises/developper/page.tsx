@@ -2,28 +2,27 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
 import Cta from "@/components/Cta";
+import { getPillar } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Développer — Astarté Conseils",
 };
 
-export default function DevelopperPage() {
+export default async function DevelopperPage() {
+  const p = await getPillar("developper");
   return (
     <>
       <PillarHero
         tone="developper"
-        index="03"
-        name="Développer"
-        eyebrow="Pilier 03 · Formations · Renforcement de capacités · Programmes"
-        title={
-          <>
-            Transmettre<br />
-            <em>ce que nous savons faire.</em>
-          </>
-        }
-        lead="Nos formations ne sont pas des modules importés. Elles sont conçues à partir de vos dossiers, vos données, vos terrains — et elles laissent à l'organisation des outils qu'elle peut redéployer en interne, sans nous."
-        ctaLabel="Construire un programme"
+        index={p?.index ?? "03"}
+        name={p?.name ?? "Développer"}
+        eyebrow={p?.heroEyebrow ?? ""}
+        title={<>{p?.heroTitle}<br /><em>{p?.heroTitleEm}</em></>}
+        lead={p?.heroLead ?? ""}
+        ctaLabel={p?.heroCtaLabel ?? "Construire un programme"}
         ctaHref="/#contact"
+        imageSrc={p?.heroImageUrl}
+        imageAlt={p?.name}
       />
 
       <section className="section tone-cream">

@@ -2,28 +2,27 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
 import Cta from "@/components/Cta";
+import { getPillar } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Accompagner — Astarté Conseils",
 };
 
-export default function AccompagnerPage() {
+export default async function AccompagnerPage() {
+  const p = await getPillar("accompagner");
   return (
     <>
       <PillarHero
         tone="accompagner"
-        index="02"
-        name="Accompagner"
-        eyebrow="Pilier 02 · Suivi-Évaluation · Stratégies · Pilotage"
-        title={
-          <>
-            Mesurer ce qui compte,<br />
-            <em>ajuster ce qui doit l&apos;être.</em>
-          </>
-        }
-        lead="L'évaluation, la stratégie et l'accompagnement opérationnel doivent guider des décisions éclairées. Nous travaillons aux côtés des équipes pour transformer l'analyse en arbitrages concrets, sans dépossession."
-        ctaLabel="Discuter d'une mission"
+        index={p?.index ?? "02"}
+        name={p?.name ?? "Accompagner"}
+        eyebrow={p?.heroEyebrow ?? ""}
+        title={<>{p?.heroTitle}<br /><em>{p?.heroTitleEm}</em></>}
+        lead={p?.heroLead ?? ""}
+        ctaLabel={p?.heroCtaLabel ?? "Discuter d'une mission"}
         ctaHref="/#contact"
+        imageSrc={p?.heroImageUrl}
+        imageAlt={p?.name}
       />
 
       <section className="section tone-cream">

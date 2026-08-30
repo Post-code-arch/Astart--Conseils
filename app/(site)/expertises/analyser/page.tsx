@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
 import Cta from "@/components/Cta";
+import { getPillar } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Analyser — Astarté Conseils",
@@ -86,23 +87,21 @@ const refGroups: { group: string; items: { title: string; client: string; body: 
   },
 ];
 
-export default function AnalyserPage() {
+export default async function AnalyserPage() {
+  const p = await getPillar("analyser");
   return (
     <>
       <PillarHero
         tone="analyser"
-        index="01"
-        name="Analyser"
-        eyebrow="Pilier 01 · Études · Recherches · Diagnostics"
-        title={
-          <>
-            Comprendre<br />
-            <em>avant d&apos;agir.</em>
-          </>
-        }
-        lead="Les décisions stratégiques s'appuient sur des données fiables. Nous produisons les études, les diagnostics et les analyses qui éclairent vos choix — où la nuance contextuelle reste, selon nous, la première forme d'expertise."
-        ctaLabel="Discuter d'une mission"
+        index={p?.index ?? "01"}
+        name={p?.name ?? "Analyser"}
+        eyebrow={p?.heroEyebrow ?? ""}
+        title={<>{p?.heroTitle}<br /><em>{p?.heroTitleEm}</em></>}
+        lead={p?.heroLead ?? ""}
+        ctaLabel={p?.heroCtaLabel ?? "Discuter d'une mission"}
         ctaHref="/#contact"
+        imageSrc={p?.heroImageUrl}
+        imageAlt={p?.name}
       />
 
       <section className="section tone-cream">
