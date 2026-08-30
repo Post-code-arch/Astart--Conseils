@@ -21,7 +21,7 @@ export default async function AccompagnerPage() {
         lead={p?.heroLead ?? ""}
         ctaLabel={p?.heroCtaLabel ?? "Discuter d'une mission"}
         ctaHref="/#contact"
-        imageSrc={p?.heroImageUrl}
+        imageSrc={p?.heroImageUrl ?? "/assets/expertise-accompagner.jpg"}
         imageAlt={p?.name}
       />
 

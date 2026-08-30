@@ -21,7 +21,7 @@ export default async function DevelopperPage() {
         lead={p?.heroLead ?? ""}
         ctaLabel={p?.heroCtaLabel ?? "Construire un programme"}
         ctaHref="/#contact"
-        imageSrc={p?.heroImageUrl}
+        imageSrc={p?.heroImageUrl ?? "/assets/expertise-developper.jpg"}
         imageAlt={p?.name}
       />
 

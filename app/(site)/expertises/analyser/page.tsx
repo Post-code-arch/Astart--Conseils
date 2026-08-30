@@ -100,7 +100,7 @@ export default async function AnalyserPage() {
         lead={p?.heroLead ?? ""}
         ctaLabel={p?.heroCtaLabel ?? "Discuter d'une mission"}
         ctaHref="/#contact"
-        imageSrc={p?.heroImageUrl}
+        imageSrc={p?.heroImageUrl ?? "/assets/expertise-analyser.jpg"}
         imageAlt={p?.name}
       />
 
