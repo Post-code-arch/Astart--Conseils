@@ -515,7 +515,7 @@ body.menu-open { overflow: hidden; }
 
 .pillar-hero-mark {
   position: absolute;
-  top: 8%;
+  top: 20%;
   right: 8%;
   width: 80px;
   height: 80px;
@@ -914,7 +914,7 @@ body.menu-open { overflow: hidden; }
 }
 .refs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
 }
 /* Références catégorisées (pilier Analyser) */
