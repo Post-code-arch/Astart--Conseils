@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import ReferencesFilter from "@/components/ReferencesFilter";
+import ReferenceGroups from "@/components/ReferenceGroups";
 import Cta from "@/components/Cta";
 import { getReferences } from "@/lib/content";
 
@@ -35,16 +35,15 @@ export default async function ReferencesPage() {
         </div>
       </section>
 
-      <section className="section tone-cream">
+      <section className="section tone-dark">
         <div className="section-head">
           <div>
-            <p className="eyebrow reveal"><span className="dot"></span> Filtrer par pilier</p>
-            <h2 className="reveal d1">Missions <em>par pôle.</em></h2>
+            <p className="eyebrow reveal"><span className="dot"></span> Missions</p>
+            <h2 className="reveal d1">Ce que nous avons <em>mené.</em></h2>
           </div>
-          <p className="reveal d2">Cliquez un pilier pour filtrer les missions correspondantes.</p>
         </div>
 
-        <ReferencesFilter items={references} />
+        <ReferenceGroups items={references} />
       </section>
 
       <section className="section tone-dark">

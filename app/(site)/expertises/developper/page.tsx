@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
+import ReferenceGroups from "@/components/ReferenceGroups";
 import Cta from "@/components/Cta";
-import { getPillar } from "@/lib/content";
+import { getPillar, getReferences } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Développer — Astarté Conseils",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 export default async function DevelopperPage() {
   const p = await getPillar("developper");
+  const references = (await getReferences()).filter((r) => r.pillar === "developper");
   return (
     <>
       <PillarHero
@@ -120,26 +122,7 @@ export default async function DevelopperPage() {
             </div>
             <Link href="/references" className="all-link reveal d2">Toutes les références →</Link>
           </div>
-          <div className="refs-grid">
-            <article className="ref-card reveal d1">
-              <span className="ref-tag">Développer</span>
-              <div className="ref-client">Oxfam · Algérie</div>
-              <h3>Formation des équipes terrain à l&apos;approche genre et au suivi-évaluation sensible</h3>
-              <p className="ref-result"><strong>Résultat</strong>3 modules adaptés au contexte local. 42 cadres formés. Outils intégrés au manuel opérationnel.</p>
-            </article>
-            <article className="ref-card reveal d2">
-              <span className="ref-tag">Développer</span>
-              <div className="ref-client">GIZ · Algérie</div>
-              <h3>Cycle de formation au pilotage axé résultats pour cadres ministériels</h3>
-              <p className="ref-result"><strong>Résultat</strong>5 sessions, 60 cadres formés sur 18 mois. Cadre logique adopté pour 2 directions.</p>
-            </article>
-            <article className="ref-card reveal d3">
-              <span className="ref-tag">Développer</span>
-              <div className="ref-client">FES · Algérie</div>
-              <h3>Programme de renforcement des capacités d&apos;analyse politique d&apos;OSC</h3>
-              <p className="ref-result"><strong>Résultat</strong>24 cadres associatifs formés. 6 organisations ont publié une note d&apos;analyse dans l&apos;année.</p>
-            </article>
-          </div>
+          <ReferenceGroups items={references} />
         </div>
       </section>
 

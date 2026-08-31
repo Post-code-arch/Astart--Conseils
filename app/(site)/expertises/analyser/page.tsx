@@ -1,94 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
+import ReferenceGroups from "@/components/ReferenceGroups";
 import Cta from "@/components/Cta";
-import { getPillar } from "@/lib/content";
+import { getPillar, getReferences } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Analyser — Astarté Conseils",
 };
-
-// Références Analyser — liste catégorisée (doc de référence éditorial).
-const refGroups: { group: string; items: { title: string; client: string; body: string }[] }[] = [
-  {
-    group: "Études & diagnostics",
-    items: [
-      {
-        title: "État des lieux sur les besoins d'accompagnement des femmes entrepreneures dans le secteur industriel",
-        client: "GIZ Algérie · Ministère de l'Industrie · 2024-2025",
-        body: "Cartographie des segments de femmes entrepreneures, analyse des motivations, obstacles et besoins spécifiques, identification des lacunes dans les dispositifs existants. Recommandations différenciées par segment.",
-      },
-      {
-        title: "Étude sur les effets psychosociaux de la violence numérique contre les femmes en Algérie",
-        client: "Programme S@lamat · The SecDev Foundation · 2021-2022",
-        body: "Analyse contextuelle, identification des formes de violence numérique et de leurs effets psychologiques et sociaux sur les femmes et leur rapport au numérique.",
-      },
-      {
-        title: "Profil pays — Approche égalité · Algérie",
-        client: "Délégation de l'Union Européenne · 2021",
-        body: "Synthèse socio-économique sur la condition des femmes, les stratégies gouvernementales et les cadres légaux.",
-      },
-    ],
-  },
-  {
-    group: "Évaluations",
-    items: [
-      {
-        title: "Évaluation finale · Projet jardins familiaux durables",
-        client: "CERAI · 2025",
-        body: "Évaluation externe finale d'un projet d'amélioration de la sécurité alimentaire via des jardins familiaux agro-écologiques gérés par des femmes dans les camps sahraouis.",
-      },
-      {
-        title: "Évaluation finale · Projet de distribution alimentaire · Camps sahraouis",
-        client: "Cruz Roja Española · 2023",
-        body: "Évaluation externe d'un projet d'aide alimentaire dans les camps de réfugiés sahraouis",
-      },
-    ],
-  },
-  {
-    group: "Accompagnement & stratégie",
-    items: [
-      {
-        title: "Intégration de l'approche égalité dans deux programmes de coopération bilatérale",
-        client: "Délégation UE Algérie · 2022",
-        body: "Appui à l'intégration de l'approche dans la logique d'intervention, le cadre logique et les matrices d'indicateurs de deux programmes UE — secteurs climat et agribusiness.",
-      },
-      {
-        title: "Mise en œuvre des projets NISSA et ECLAT-DZ",
-        client: "SCAC · Ambassade de France en Algérie · 2022-2025",
-        body: "Conception et mise en œuvre de deux programmes d'accompagnement dédiés aux porteuses de projets et aux femmes entrepreneures.",
-      },
-    ],
-  },
-  {
-    group: "Formations",
-    items: [
-      {
-        title: "Conception d'un module de sensibilisation et d'information à l'entrepreneuriat des femmes et à l'économie verte",
-        client: "GIZ Algérie · En cours · 2025-2026",
-        body: "Conception et animation d'un dispositif de sensibilisation destiné à des publics cibles spécifiques, visant à favoriser une acceptation positive du rôle des femmes dans le secteur entrepreneurial et l'économie verte.",
-      },
-      {
-        title: "Formation « Approche égalité et développement » · Algérie",
-        client: "GIZ Algérie · 2023-2024",
-        body: "Conception et animation de sessions de formation sur l'intégration de l'approche égalité dans les projets de développement, et élaboration de la boîte à outils pédagogique pour en permettre la réplication.",
-      },
-      {
-        title: "Ateliers de formation · Gestion des conflits et communication assertive",
-        client: "Délégation UE Algérie · 2023",
-        body: "Animation de 16 ateliers de formation pour l'ensemble du personnel de la Délégation.",
-      },
-      {
-        title: "Formation aux Intelligences Collectives et Citoyennes",
-        client: "Friedrich-Ebert-Stiftung · 2021-2024",
-        body: "Animation de plusieurs sessions dans le cadre du projet RAJE.",
-      },
-    ],
-  },
-];
-
 export default async function AnalyserPage() {
   const p = await getPillar("analyser");
+  const references = (await getReferences()).filter((r) => r.pillar === "analyser");
   return (
     <>
       <PillarHero
@@ -238,20 +160,7 @@ export default async function AnalyserPage() {
             <Link href="/references" className="all-link reveal d2">Toutes les références →</Link>
           </div>
 
-          {refGroups.map((g) => (
-            <div key={g.group} className="ref-group">
-              <h3 className="ref-group-title reveal">{g.group}</h3>
-              <div className="refs-grid">
-                {g.items.map((it, i) => (
-                  <article key={it.title} className={`ref-card reveal d${(i % 3) + 1}`}>
-                    <div className="ref-client">{it.client}</div>
-                    <h3>{it.title}</h3>
-                    <p className="ref-note">{it.body}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          ))}
+          <ReferenceGroups items={references} />
         </div>
       </section>
 

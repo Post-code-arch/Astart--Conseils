@@ -1,9 +1,12 @@
-// Références / missions de la page /references (grille filtrable).
-// Fallback + source de seed pour le type Sanity `reference`.
+// Références / missions — grille groupée par catégorie (page /references et
+// sections "Quelques missions" des pages piliers). Fallback + source de seed
+// pour le type Sanity `reference`. Sanity fait foi si des documents existent
+// (voir lib/content.ts::getReferences) ; ce tableau ne sert que de repli.
 export type Pillar = "analyser" | "accompagner" | "developper";
 
 export type Reference = {
   pillar: Pillar;
+  group: string;
   client: string;
   title: string;
   result: string;
@@ -19,65 +22,90 @@ export const PILLAR_LABEL: Record<Pillar, string> = {
 export const references: Reference[] = [
   {
     pillar: "analyser",
-    client: "Union Européenne · Algérie",
-    title: "Étude sur l'égalité de genre dans l'accès au marché de l'emploi",
-    result: "Base de données utilisée pour orienter la politique de coopération UE-Algérie sur 3 ans.",
+    group: "Études & diagnostics",
+    client: "GIZ Algérie · Ministère de l'Industrie · 2024-2025",
+    title: "État des lieux sur les besoins d'accompagnement des femmes entrepreneures dans le secteur industriel",
+    result: "Cartographie des segments de femmes entrepreneures, analyse des motivations, obstacles et besoins spécifiques, identification des lacunes dans les dispositifs existants. Recommandations différenciées par segment.",
     order: 1,
   },
   {
-    pillar: "accompagner",
-    client: "GIZ · Maroc & Algérie",
-    title: "Évaluation mi-parcours d'un programme d'entrepreneuriat féminin régional",
-    result: "Recommandations adoptées à 80% par le comité de pilotage.",
+    pillar: "analyser",
+    group: "Études & diagnostics",
+    client: "Programme S@lamat · The SecDev Foundation · 2021-2022",
+    title: "Étude sur les effets psychosociaux de la violence numérique contre les femmes en Algérie",
+    result: "Analyse contextuelle, identification des formes de violence numérique et de leurs effets psychologiques et sociaux sur les femmes et leur rapport au numérique.",
     order: 2,
   },
   {
-    pillar: "developper",
-    client: "Oxfam · Algérie",
-    title: "Formation des équipes terrain à l'approche genre et au suivi-évaluation sensible",
-    result: "42 cadres formés. Outils intégrés au manuel opérationnel.",
+    pillar: "analyser",
+    group: "Études & diagnostics",
+    client: "Délégation de l'Union Européenne · 2021",
+    title: "Profil pays — Approche égalité · Algérie",
+    result: "Synthèse socio-économique sur la condition des femmes, les stratégies gouvernementales et les cadres légaux.",
     order: 3,
   },
   {
     pillar: "analyser",
-    client: "SCAC · Ambassade de France",
-    title: "Diagnostic des dispositifs d'appui à la jeunesse universitaire algérienne",
-    result: "18 acteurs cartographiés et 7 axes prioritaires pour le prochain cycle.",
+    group: "Évaluations",
+    client: "CERAI · 2025",
+    title: "Évaluation finale · Projet jardins familiaux durables",
+    result: "Évaluation externe finale d'un projet d'amélioration de la sécurité alimentaire via des jardins familiaux agro-écologiques gérés par des femmes dans les camps sahraouis.",
     order: 4,
   },
   {
-    pillar: "accompagner",
-    client: "ONU Femmes · Maghreb",
-    title: "Stratégie régionale pour l'autonomisation économique des femmes rurales",
-    result: "Document stratégique 2024-2027 validé. Trois pays alignés sur un cadre commun.",
+    pillar: "analyser",
+    group: "Évaluations",
+    client: "Cruz Roja Española · 2023",
+    title: "Évaluation finale · Projet de distribution alimentaire · Camps sahraouis",
+    result: "Évaluation externe d'un projet d'aide alimentaire dans les camps de réfugiés sahraouis",
     order: 5,
   },
   {
-    pillar: "developper",
-    client: "GIZ · Algérie",
-    title: "Cycle de formation au pilotage axé résultats pour cadres ministériels",
-    result: "60 cadres formés sur 18 mois. Cadre logique adopté pour 2 directions.",
+    pillar: "accompagner",
+    group: "Accompagnement & stratégie",
+    client: "Délégation UE Algérie · 2022",
+    title: "Intégration de l'approche égalité dans deux programmes de coopération bilatérale",
+    result: "Appui à l'intégration de l'approche dans la logique d'intervention, le cadre logique et les matrices d'indicateurs de deux programmes UE — secteurs climat et agribusiness.",
     order: 6,
   },
   {
-    pillar: "analyser",
-    client: "Ministère de la Formation Professionnelle",
-    title: "Étude sur l'adéquation formation-emploi dans le secteur des services",
-    result: "1 200 entreprises et 800 stagiaires interrogés. Recommandations intégrées au plan sectoriel 2025.",
+    pillar: "accompagner",
+    group: "Accompagnement & stratégie",
+    client: "SCAC · Ambassade de France en Algérie · 2022-2025",
+    title: "Mise en œuvre des projets NISSA et ECLAT-DZ",
+    result: "Conception et mise en œuvre de deux programmes d'accompagnement dédiés aux porteuses de projets et aux femmes entrepreneures.",
     order: 7,
   },
   {
-    pillar: "accompagner",
-    client: "Union Européenne · Tunisie & Algérie",
-    title: "Évaluation finale d'un programme régional sur les droits économiques",
-    result: "47 recommandations, dont 38 reprises dans la nouvelle phase de coopération.",
+    pillar: "developper",
+    group: "Formations",
+    client: "GIZ Algérie · En cours · 2025-2026",
+    title: "Conception d'un module de sensibilisation et d'information à l'entrepreneuriat des femmes et à l'économie verte",
+    result: "Conception et animation d'un dispositif de sensibilisation destiné à des publics cibles spécifiques, visant à favoriser une acceptation positive du rôle des femmes dans le secteur entrepreneurial et l'économie verte.",
     order: 8,
   },
   {
     pillar: "developper",
-    client: "FES · Algérie",
-    title: "Programme de renforcement des capacités d'analyse politique d'OSC",
-    result: "24 cadres associatifs formés. 6 organisations ont publié une note d'analyse dans l'année.",
+    group: "Formations",
+    client: "GIZ Algérie · 2023-2024",
+    title: "Formation « Approche égalité et développement » · Algérie",
+    result: "Conception et animation de sessions de formation sur l'intégration de l'approche égalité dans les projets de développement, et élaboration de la boîte à outils pédagogique pour en permettre la réplication.",
     order: 9,
+  },
+  {
+    pillar: "developper",
+    group: "Formations",
+    client: "Délégation UE Algérie · 2023",
+    title: "Ateliers de formation · Gestion des conflits et communication assertive",
+    result: "Animation de 16 ateliers de formation pour l'ensemble du personnel de la Délégation.",
+    order: 10,
+  },
+  {
+    pillar: "developper",
+    group: "Formations",
+    client: "Friedrich-Ebert-Stiftung · 2021-2024",
+    title: "Formation aux Intelligences Collectives et Citoyennes",
+    result: "Animation de plusieurs sessions dans le cadre du projet RAJE.",
+    order: 11,
   },
 ];

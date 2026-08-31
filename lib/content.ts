@@ -48,7 +48,7 @@ export async function getPublications(): Promise<Publication[]> {
 
 export async function getReferences(): Promise<Reference[]> {
   return safeFetch<Reference[]>(
-    `*[_type=="reference"]|order(order asc){ pillar, client, title, "result": result, order }`,
+    `*[_type=="reference"]|order(order asc){ pillar, group, client, title, "result": result, order }`,
     refsFallback,
   );
 }

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import PillarHero from "@/components/PillarHero";
+import ReferenceGroups from "@/components/ReferenceGroups";
 import Cta from "@/components/Cta";
-import { getPillar } from "@/lib/content";
+import { getPillar, getReferences } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Accompagner — Astarté Conseils",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 export default async function AccompagnerPage() {
   const p = await getPillar("accompagner");
+  const references = (await getReferences()).filter((r) => r.pillar === "accompagner");
   return (
     <>
       <PillarHero
@@ -119,26 +121,7 @@ export default async function AccompagnerPage() {
             </div>
             <Link href="/references" className="all-link reveal d2">Toutes les références →</Link>
           </div>
-          <div className="refs-grid">
-            <article className="ref-card reveal d1">
-              <span className="ref-tag">Accompagner</span>
-              <div className="ref-client">GIZ · Algérie</div>
-              <h3>Évaluation mi-parcours d&apos;un programme d&apos;entrepreneuriat des femmesféminin régional</h3>
-              <p className="ref-result"><strong>Résultat</strong>Recommandations adoptées à 80% par le comité de pilotage. Réorientation budgétaire de 12% en phase 2.</p>
-            </article>
-            <article className="ref-card reveal d2">
-              <span className="ref-tag">Accompagner</span>
-              <div className="ref-client">ONU Femmes · Maghreb</div>
-              <h3>Stratégie régionale pour l&apos;autonomisation économique des femmes rurales</h3>
-              <p className="ref-result"><strong>Résultat</strong>Document stratégique 2024-2027 validé. Trois pays alignés sur un cadre commun de pilotage.</p>
-            </article>
-            <article className="ref-card reveal d3">
-              <span className="ref-tag">Accompagner</span>
-              <div className="ref-client">Union Européenne · Tunisie &amp; Algérie</div>
-              <h3>Évaluation finale d&apos;un programme régional sur les droits économiques</h3>
-              <p className="ref-result"><strong>Résultat</strong>47 recommandations, dont 38 reprises dans la nouvelle phase de coopération.</p>
-            </article>
-          </div>
+          <ReferenceGroups items={references} />
         </div>
       </section>
 
