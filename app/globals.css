@@ -617,6 +617,15 @@ body.menu-open { overflow: hidden; }
   background-size: cover;
   background-position: left center;
 }
+.page-hero.hero-shared-visual {
+  background-color: #1E1E1E;
+  background-image:
+    linear-gradient(90deg, rgba(15, 16, 20, 0.85) 0%, rgba(15, 16, 20, 0.4) 55%, rgba(15, 16, 20, 0.2) 100%),
+    linear-gradient(180deg, rgba(15, 16, 20, 0.35) 0%, rgba(15, 16, 20, 0.1) 40%, rgba(15, 16, 20, 0.8) 100%),
+    url(/assets/hero-home.png);
+  background-size: cover;
+  background-position: center;
+}
 .page-hero.hero-references {
   background-color: #1E1E1E;
   background-image:

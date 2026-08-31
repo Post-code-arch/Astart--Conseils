@@ -15,7 +15,7 @@ export default async function FormationsPage() {
 
   return (
     <>
-      <section className="page-hero gradient-horizon">
+      <section className="page-hero hero-shared-visual">
         <div className="page-hero-grain" aria-hidden="true"></div>
         <div className="page-hero-inner">
           <div className="page-hero-text">

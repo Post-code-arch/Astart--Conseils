@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function AProposPage() {
   return (
     <>
-      <section className="page-hero gradient-misty">
+      <section className="page-hero hero-shared-visual">
         <div className="page-hero-grain" aria-hidden="true"></div>
         <div className="page-hero-inner">
           <div className="page-hero-text">
