@@ -10,7 +10,7 @@ export default async function RessourcesPage() {
   const publications = await getPublications();
   return (
     <>
-      <section className="page-hero gradient-misty">
+      <section className="page-hero hero-ressources">
         <div className="page-hero-grain" aria-hidden="true"></div>
         <div className="page-hero-inner">
           <div className="page-hero-text">
