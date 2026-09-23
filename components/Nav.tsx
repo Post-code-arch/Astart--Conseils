@@ -117,7 +117,7 @@ export default function Nav() {
           <div className="menu-foot">
             <div className="meta">
               <span>Alger, Algérie</span>
-              <a href="mailto:contact@astarte-conseils.com">contact@astarte-conseils.com</a>
+              <a href="mailto:contact@astarte-conseils.org">contact@astarte-conseils.org</a>
             </div>
             <div className="legal">
               <a href="#">LinkedIn</a>

@@ -82,7 +82,7 @@ export default async function RessourcesPage() {
         title={<>Une publication par<br /><em>trimestre, sans fioritures.</em></>}
         lead="Notre cahier annuel et nos notes courtes, directement par email."
         ctaLabel="M'abonner"
-        ctaHref="mailto:contact@astarte-conseils.com?subject=Abonnement publications"
+        ctaHref="mailto:contact@astarte-conseils.org?subject=Abonnement publications"
       />
     </>
   );

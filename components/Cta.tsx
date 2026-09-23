@@ -7,7 +7,7 @@ export default function Cta({
   eyebrow,
   title,
   lead,
-  email = "contact@astarte-conseils.com",
+  email = "contact@astarte-conseils.org",
   phone,
   ctaLabel,
   ctaHref,

@@ -65,7 +65,7 @@ export default async function Footer() {
       </div>
       <div className="footer-bar">
         <span>© Astarté Conseils 2026</span>
-        <span>astarte-conseils.com</span>
+        <span>astarte-conseils.org</span>
       </div>
     </footer>
   );
