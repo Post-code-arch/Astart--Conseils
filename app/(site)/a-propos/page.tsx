@@ -24,7 +24,17 @@ export default function AProposPage() {
                 conseil en sciences sociales appliquées. Nous sommes nées sur ce terrain — nous y avons
                 grandi, étudié, travaillé.
               </p>
-              <Link href="/#contact" className="btn-pill primary reveal d3">Parlons-en <span className="arrow">→</span></Link>
+              <div className="page-hero-actions reveal d3">
+                <Link href="/#contact" className="btn-pill primary">Parlons-en <span className="arrow">→</span></Link>
+                <a
+                  href="/plaquette-astarte-conseils.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill ghost"
+                >
+                  Télécharger la plaquette (PDF)
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -99,7 +109,7 @@ export default function AProposPage() {
 
         <div className="stats-strip">
           <div className="stat-block reveal d1"><div className="num count-up">15<em>+</em></div><div className="label">années<br />d&apos;expertise</div></div>
-          <div className="stat-block reveal d2"><div className="num count-up">120<em>+</em></div><div className="label">missions<br />conduites</div></div>
+          <div className="stat-block reveal d2"><div className="num count-up">19<em>+</em></div><div className="label">missions<br />conduites</div></div>
           <div className="stat-block reveal d3"><div className="num count-up">100<em>%</em></div><div className="label">analystes<br />sur le terrain</div></div>
         </div>
       </section>

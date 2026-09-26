@@ -684,6 +684,12 @@ body.menu-open { overflow: hidden; }
   padding-top: 24px;
   border-top: 1px solid var(--line-dark);
 }
+.page-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
 .page-hero-lead {
   font-family: var(--font-sans);
   font-weight: 300;

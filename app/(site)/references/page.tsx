@@ -16,7 +16,7 @@ export default async function ReferencesPage() {
         <div className="page-hero-grain" aria-hidden="true"></div>
         <div className="page-hero-inner">
           <div className="page-hero-text">
-            <p className="eyebrow reveal"><span className="dot"></span> 120+ missions · 15 ans</p>
+            <p className="eyebrow reveal"><span className="dot"></span> 19+ missions · 15 ans</p>
             <h1 className="page-hero-title reveal d1">
               Ce que nous avons fait<br />
               <em>pour d&apos;autres.</em>

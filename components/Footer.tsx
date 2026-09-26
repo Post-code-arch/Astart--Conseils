@@ -46,6 +46,11 @@ export default async function Footer() {
             <li>
               <Link href="/formations">Formations</Link>
             </li>
+            <li>
+              <a href="/plaquette-astarte-conseils.pdf" target="_blank" rel="noopener noreferrer">
+                Plaquette de présentation (PDF)
+              </a>
+            </li>
           </ul>
         </div>
         <div className="footer-contact">
