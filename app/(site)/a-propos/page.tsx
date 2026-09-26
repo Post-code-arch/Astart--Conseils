@@ -100,8 +100,7 @@ export default function AProposPage() {
         <div className="stats-strip">
           <div className="stat-block reveal d1"><div className="num count-up">15<em>+</em></div><div className="label">années<br />d&apos;expertise</div></div>
           <div className="stat-block reveal d2"><div className="num count-up">120<em>+</em></div><div className="label">missions<br />conduites</div></div>
-          <div className="stat-block reveal d3"><div className="num count-up">9</div><div className="label">pays<br />d&apos;intervention</div></div>
-          <div className="stat-block reveal d4"><div className="num count-up">100<em>%</em></div><div className="label">analystes<br />sur le terrain</div></div>
+          <div className="stat-block reveal d3"><div className="num count-up">100<em>%</em></div><div className="label">analystes<br />sur le terrain</div></div>
         </div>
       </section>
 

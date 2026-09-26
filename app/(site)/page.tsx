@@ -36,10 +36,6 @@ export default async function Home() {
             <div className="label">missions<br />conduites</div>
           </div>
           <div className="proof-stat">
-            <div className="num count-up">8</div>
-            <div className="label">pays<br />d&apos;intervention</div>
-          </div>
-          <div className="proof-stat">
             <div className="num count-up">100<em>%</em></div>
             <div className="label">analyses à partir<br />du terrain</div>
           </div>

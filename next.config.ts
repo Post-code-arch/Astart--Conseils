@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { source: "/analyser", destination: "/expertises/analyser", statusCode: 301 },
       { source: "/accompagner", destination: "/expertises/accompagner", statusCode: 301 },
       { source: "/developper", destination: "/expertises/developper", statusCode: 301 },
+      { source: "/expertise", destination: "/expertises", statusCode: 301 },
     ];
   },
 };

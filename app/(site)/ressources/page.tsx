@@ -29,53 +29,31 @@ export default async function RessourcesPage() {
         </div>
       </section>
 
-      <section className="section tone-cream">
-        <div className="resource-feature">
-          <div className="resource-cover reveal d1">
+      {publications.length > 0 && (
+        <section className="section tone-dark">
+          <div className="section-head">
             <div>
-              <div className="cover-tag">Édition 01 · 2026</div>
+              <p className="eyebrow reveal"><span className="dot"></span> Notes &amp; publications</p>
+              <h2 className="reveal d1">Articles &amp; <em>contributions.</em></h2>
             </div>
-            <div className="cover-title">Le terrain<br />comme<br /><em>doctrine.</em></div>
-            <div className="cover-meta">
-              <span>23 pages · A4</span>
-              <span>FR</span>
-            </div>
+            <p className="reveal d2">Notes courtes, essais et tribunes publiés au fil des missions.</p>
           </div>
-          <div className="resource-info reveal d2">
-            <p className="eyebrow"><span className="dot"></span> Cahier éditorial</p>
-            <h2 style={{ marginTop: "14px" }}>Cahier №01 —<br /><em>Le terrain comme doctrine.</em></h2>
-            <p>Un cahier sur la pratique du conseil en Afrique du Nord — méthodes, terrains, études de cas, et la conviction que la finesse contextuelle reste la première forme d&apos;expertise. Étude de cas Sahel logistique, manifeste, méthode en six étapes, essai sur le temps long, conversation avec les fondatrices, galerie de missions.</p>
-            <div className="resource-actions">
-              <a href="#" className="btn-pill primary">Lire en ligne <span className="arrow">→</span></a>
-              <a href="#" className="btn-pill outline-dark">Version Word</a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="section tone-dark">
-        <div className="section-head">
-          <div>
-            <p className="eyebrow reveal"><span className="dot"></span> Notes &amp; publications</p>
-            <h2 className="reveal d1">Articles &amp; <em>contributions.</em></h2>
+          <div className="pub-list">
+            {publications.map((pub, i) => (
+              <a href={pub.href ?? "#"} key={i} className={`pub-row reveal d${(i % 3) + 1}`}>
+                <span className="pub-year">{pub.year}</span>
+                <div className="pub-content">
+                  <h3>{pub.title}</h3>
+                  <p>{pub.body}</p>
+                </div>
+                <span className="pub-tag">{pub.tag}</span>
+                <span className="pub-arrow">Lire <span className="arrow">→</span></span>
+              </a>
+            ))}
           </div>
-          <p className="reveal d2">Notes courtes, essais et tribunes publiés au fil des missions.</p>
-        </div>
-
-        <div className="pub-list">
-          {publications.map((pub, i) => (
-            <a href={pub.href ?? "#"} key={i} className={`pub-row reveal d${(i % 3) + 1}`}>
-              <span className="pub-year">{pub.year}</span>
-              <div className="pub-content">
-                <h3>{pub.title}</h3>
-                <p>{pub.body}</p>
-              </div>
-              <span className="pub-tag">{pub.tag}</span>
-              <span className="pub-arrow">Lire <span className="arrow">→</span></span>
-            </a>
-          ))}
-        </div>
-      </section>
+        </section>
+      )}
 
       <Cta
         eyebrow="Recevoir nos publications"
